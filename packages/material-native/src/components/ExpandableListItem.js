@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { useIcon } from "@wq/react";
+import { useIcon, withWQ } from "@wq/react";
 import { List } from "react-native-paper";
 import PropTypes from "prop-types";
 
-export default function ExpandableListItem({
+function ExpandableListItem({
     children,
     description,
     icon,
@@ -44,3 +44,5 @@ ExpandableListItem.propTypes = {
     open: PropTypes.bool,
     onToggle: PropTypes.func,
 };
+
+export default withWQ(ExpandableListItem);

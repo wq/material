@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { useComponents } from "@wq/react";
+import { useComponents, withWQ } from "@wq/react";
 import { View } from "react-native";
 import { useTheme } from "react-native-paper";
 import { useMinWidth } from "../hooks.js";
 import PropTypes from "prop-types";
 
-export default function SidePanel({
+function SidePanel({
     anchor: anchorSpec = "top-left",
     children,
     compactChildren,
@@ -92,3 +92,5 @@ SidePanel.propTypes = {
     onChange: PropTypes.func,
     anchor: PropTypes.string,
 };
+
+export default withWQ(SidePanel);

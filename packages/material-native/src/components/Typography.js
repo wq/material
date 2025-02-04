@@ -8,6 +8,7 @@ import {
     Caption,
 } from "react-native-paper";
 import PropTypes from "prop-types";
+import { withWQ } from "@wq/react";
 
 const variants = {
     default: Text,
@@ -25,7 +26,7 @@ const variants = {
     overline: Caption,
 };
 
-export default function Typography({ variant, children, ...rest }) {
+function Typography({ variant, children, ...rest }) {
     const Component = variants[variant] || variants.default;
     if (variant === "overline" && typeof children === "string") {
         children = children.toUpperCase();
@@ -37,3 +38,5 @@ Typography.propTypes = {
     variant: PropTypes.string,
     children: PropTypes.node,
 };
+
+export default withWQ(Typography);

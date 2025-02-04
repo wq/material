@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-import { useIconComponents } from "@wq/react";
+import { useWQ, withWQ } from "@wq/react";
 import { View } from "react-native";
 import { SegmentedButtons } from "react-native-paper";
 import PropTypes from "prop-types";
 
-export default function TabGroup({ children, style, ...rest }) {
+function TabGroup({ children, style, ...rest }) {
     const tabs = React.Children.toArray(children),
         [value, setValue] = useState(tabs[0].props.value),
         activeTab = tabs.find((tab) => tab.props.value === value),
         handleChange = (tab) => setValue(tab),
-        icons = useIconComponents(),
+        icons = useWQ("icons", true),
         buttons = tabs.map((tab) => ({
             value: tab.props.value,
             label: tab.props.label,
@@ -36,3 +36,5 @@ TabGroup.propTypes = {
     children: PropTypes.node,
     style: PropTypes.object,
 };
+
+export default withWQ(TabGroup);

@@ -2,8 +2,9 @@ import React from "react";
 import { View } from "react-native";
 import { DataTable } from "react-native-paper";
 import PropTypes from "prop-types";
+import { withWQ } from "@wq/react";
 
-export default function TableCell({ interactive, children, ...rest }) {
+function TableCell({ interactive, children, ...rest }) {
     const Cell = interactive ? InteractiveCell : DataTable.Cell;
     return <Cell {...rest}>{children}</Cell>;
 }
@@ -23,3 +24,5 @@ function InteractiveCell(props) {
 }
 
 TableCell.propTypes = { interactive: PropTypes.bool, children: PropTypes.node };
+
+export default withWQ(TableCell);

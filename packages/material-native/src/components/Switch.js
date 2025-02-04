@@ -1,8 +1,9 @@
 import React from "react";
 import { Switch as PaperSwitch, useTheme } from "react-native-paper";
 import PropTypes from "prop-types";
+import { withWQ } from "@wq/react";
 
-export default function Switch({ checked: value, color, ...rest }) {
+function Switch({ checked: value, color, ...rest }) {
     const theme = useTheme();
     if (color === "primary") {
         color = theme.colors.primary;
@@ -16,3 +17,5 @@ Switch.propTypes = {
     checked: PropTypes.bool,
     color: PropTypes.string,
 };
+
+export default withWQ(Switch);

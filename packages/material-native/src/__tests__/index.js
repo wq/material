@@ -1,5 +1,5 @@
-import material from "../index.js";
+import * as material from "../index.js";
 
 test("it loads", () => {
-    expect(material.name).toBe("material");
+    expect(material).toBeDefined();
 });

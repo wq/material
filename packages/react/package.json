@@ -4,7 +4,7 @@
     "description": "React renderer for use with @wq/app",
     "type": "module",
     "main": "index.js",
-    "react-native": "src/index.native.js",
+    "react-native": "src/index.js",
     "scripts": {
         "test": "cd ../../ && npm run jest packages/react",
         "build": "npm run babel && npm run prettier",
@@ -29,18 +29,9 @@
     },
     "homepage": "https://wq.io/@wq/react",
     "dependencies": {
-        "@wq/model": "^2.1.0",
-        "@wq/outbox": "^2.1.0",
-        "@wq/router": "^2.0.0",
-        "formik": "^2.4.2",
-        "param-case": "^3.0.4",
-        "pascal-case": "^3.1.2",
-        "react-redux": "^8.1.0"
+        "param-case": "^3.0.4"
     },
     "devDependencies": {
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
-        "react-test-renderer": "^18.2.0",
-        "redux-first-router-link": "https://github.com/faceyspacey/redux-first-router-link/archive/e68b143.tar.gz"
+        "@testing-library/react": "^16.2.0"
     }
 }

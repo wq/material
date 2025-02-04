@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Image, TouchableOpacity, Dimensions } from "react-native";
 import PropTypes from "prop-types";
+import { withWQ } from "@wq/react";
 
-export default function Img({ src, onPress, onClick, style, ...props }) {
+function Img({ src, onPress, onClick, style, ...props }) {
     const [source, setSource] = useState(src ? { uri: src } : null);
     useEffect(() => {
         if (!src) {
@@ -100,3 +101,5 @@ Img.propTypes = {
     onClick: PropTypes.func,
     style: PropTypes.object,
 };
+
+export default withWQ(Img);

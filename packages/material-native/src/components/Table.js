@@ -1,3 +1,4 @@
 import { DataTable } from "react-native-paper";
+import { withWQ } from "@wq/react";
 
-export default DataTable;
+export default withWQ(DataTable);

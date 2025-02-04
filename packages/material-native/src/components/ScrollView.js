@@ -2,8 +2,9 @@ import React from "react";
 import { ScrollView as PaperScrollView } from "react-native";
 import { useTheme } from "react-native-paper";
 import PropTypes from "prop-types";
+import { withWQ } from "@wq/react";
 
-export default function ScrollView({ style, ...rest }) {
+function ScrollView({ style, ...rest }) {
     const theme = useTheme();
     return (
         <PaperScrollView
@@ -20,3 +21,5 @@ export default function ScrollView({ style, ...rest }) {
 ScrollView.propTypes = {
     style: PropTypes.object,
 };
+
+export default withWQ(ScrollView);
