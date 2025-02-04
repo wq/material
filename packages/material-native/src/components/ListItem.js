@@ -1,9 +1,9 @@
 import React from "react";
-import { useIcon } from "@wq/react";
+import { useIcon, withWQ } from "@wq/react";
 import { List } from "react-native-paper";
 import PropTypes from "prop-types";
 
-export default function ListItem({
+function ListItem({
     children,
     description,
     icon,
@@ -36,3 +36,5 @@ ListItem.propTypes = {
     style: PropTypes.object,
     onClick: PropTypes.func,
 };
+
+export default withWQ(ListItem);

@@ -1,2 +1,4 @@
 import { Fragment } from "react";
-export default Fragment;
+import { withWQ } from "@wq/react";
+
+export default withWQ(Fragment, "TableContainer");

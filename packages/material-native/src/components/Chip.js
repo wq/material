@@ -1,9 +1,9 @@
 import React from "react";
-import { useIcon } from "@wq/react";
+import { useIcon, withWQ } from "@wq/react";
 import { Chip as PaperChip, useTheme } from "react-native-paper";
 import PropTypes from "prop-types";
 
-export default function Chip({
+function Chip({
     label,
     icon,
     color,
@@ -65,3 +65,5 @@ Chip.propTypes = {
     onDelete: PropTypes.func,
     onClose: PropTypes.func,
 };
+
+export default withWQ(Chip);

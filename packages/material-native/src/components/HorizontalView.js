@@ -1,8 +1,9 @@
 import React from "react";
 import { View } from "react-native";
 import PropTypes from "prop-types";
+import { withWQ } from "@wq/react";
 
-export default function HorizontalView({ style, ...rest }) {
+function HorizontalView({ style, ...rest }) {
     return (
         <View
             style={{
@@ -20,3 +21,5 @@ export default function HorizontalView({ style, ...rest }) {
 HorizontalView.propTypes = {
     style: PropTypes.object,
 };
+
+export default withWQ(HorizontalView);

@@ -1,9 +1,18 @@
 import React from "react";
 import { Appbar } from "react-native-paper";
-import { useBreadcrumbs, useNav } from "@wq/react";
+import { useComponents, withWQ, createFallbackComponent } from "@wq/react";
+import { useNav } from "./Link.js";
 import PropTypes from "prop-types";
 
-export default function Header({ options, route }) {
+const HeaderFallback = {
+    components: {
+        useNav,
+        useBreadcrumbs: createFallbackComponent("useBreadcrumbs", "@wq/router"),
+    },
+};
+
+function Header({ options, route }) {
+    const { useNav, useBreadcrumbs } = useComponents();
     const title = options.title || route.name,
         breadcrumbs = useBreadcrumbs() || [],
         previous = breadcrumbs[breadcrumbs.length - 2],
@@ -20,3 +29,5 @@ Header.propTypes = {
     options: PropTypes.object,
     route: PropTypes.object,
 };
+
+export default withWQ(Header, { fallback: HeaderFallback });

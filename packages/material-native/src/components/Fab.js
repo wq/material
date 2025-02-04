@@ -1,9 +1,17 @@
 import React from "react";
 import { FAB } from "react-native-paper";
-import { useNav, useIcon } from "@wq/react";
+import { useComponents, useIcon, withWQ } from "@wq/react";
+import { useNav } from "./Link.js";
 import PropTypes from "prop-types";
 
-export default function Fab({ icon, to, ...rest }) {
+const FabFallback = {
+    components: {
+        useNav,
+    },
+};
+
+function Fab({ icon, to, ...rest }) {
+    const { useNav } = useComponents();
     const onPress = useNav(to),
         Icon = useIcon(icon);
 
@@ -26,3 +34,5 @@ Fab.propTypes = {
     icon: PropTypes.string,
     to: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
 };
+
+export default withWQ(Fab, { fallback: FabFallback });

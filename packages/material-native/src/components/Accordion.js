@@ -1,8 +1,9 @@
 import React from "react";
 import { List } from "react-native-paper";
 import PropTypes from "prop-types";
+import { withWQ } from "@wq/react";
 
-export default function Accordion({ summary, children, open, onToggle }) {
+function Accordion({ summary, children, open, onToggle }) {
     let handleToggle;
     if (onToggle) {
         handleToggle = () => onToggle(!open);
@@ -20,3 +21,5 @@ Accordion.propTypes = {
     open: PropTypes.bool,
     onToggle: PropTypes.func,
 };
+
+export default withWQ(Accordion);

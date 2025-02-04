@@ -28,30 +28,13 @@
     },
     "homepage": "https://wq.io/@wq/material",
     "dependencies": {
-        "@wq/react": "^2.0.0",
-        "date-fns": "^2.30.0"
+        "@wq/react": "file:../react"
     },
     "peerDependencies": {
-        "@react-native-async-storage/async-storage": "*",
-        "@react-native-community/netinfo": "*",
-        "@react-navigation/stack": "*",
-        "expo-application": "*",
-        "expo-document-picker": "*",
-        "expo-image-picker": "*",
-        "react-native-modal-datetime-picker": "*",
-        "react-native-paper": "*",
-        "react-native-picker-select": "*"
+        "react-native-paper": "*"
     },
     "devDependencies": {
-        "@react-native-async-storage/async-storage": "^1.19.1",
-        "@react-native-community/netinfo": "^9.4.1",
-        "@react-navigation/stack": "^6.3.17",
-        "expo-application": "^5.3.0",
-        "expo-document-picker": "^11.5.4",
-        "expo-image-picker": "^14.3.2",
-        "jest-expo": "^49.0.0",
-        "react-native-modal-datetime-picker": "^17.0.0",
-        "react-native-paper": "^5.10.1",
-        "react-native-picker-select": "github:Expensify/react-native-picker-select#eae0585"
+        "jest-expo": "^52.0.3",
+        "react-native-paper": "^5.13.1"
     }
 }

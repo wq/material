@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { App as DefaultApp, usePlugin } from "@wq/react";
+import { useConfig, withWQ } from "@wq/react";
 import {
     MD2LightTheme,
     MD3LightTheme,
@@ -7,6 +7,7 @@ import {
     MD3DarkTheme,
     Provider as PaperProvider,
 } from "react-native-paper";
+import * as components from "./components/index.js";
 
 const THEMES = {
     "light-2": MD2LightTheme,
@@ -15,25 +16,24 @@ const THEMES = {
     "dark-3": MD3DarkTheme,
 };
 
-export default function App() {
-    const { theme: configTheme } = usePlugin("material").config,
-        theme = useMemo(() => createTheme(configTheme), [configTheme]),
-        options = useMemo(
-            () => ({
-                navigator: { theme },
-                screen: {
-                    cardStyle: { backgroundColor: theme.colors.background },
-                },
-            }),
-            [theme]
-        );
+const defaultConfig = {
+    material: {
+        theme: {
+            primary: "#7500ae",
+            secondary: "#0088bd",
+        },
+    },
+};
 
-    return (
-        <PaperProvider theme={theme}>
-            <DefaultApp options={options} />
-        </PaperProvider>
-    );
+function Root({ children }) {
+    const { material: { theme: configTheme } = {} } = useConfig(),
+        theme = useMemo(() => createTheme(configTheme), [configTheme]);
+    return <PaperProvider theme={theme}>{children}</PaperProvider>;
 }
+
+export default withWQ(Root, {
+    defaults: { config: defaultConfig, components: { ...components } },
+});
 
 function createTheme({
     type = "light",

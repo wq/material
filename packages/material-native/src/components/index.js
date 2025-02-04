@@ -45,14 +45,6 @@ import TableCell from "./TableCell.js";
 import TableContainer from "./TableContainer.js";
 import TablePagination from "./TablePagination.js";
 
-import FormRoot from "./FormRoot.js";
-import FormError from "./FormError.js";
-import CancelButton from "./CancelButton.js";
-import SubmitButton from "./SubmitButton.js";
-import IconSubmitButton from "./IconSubmitButton.js";
-import DeleteForm from "./DeleteForm.js";
-
-import Spinner from "./Spinner.js";
 import Popup from "./Popup.js";
 import SidePanel from "./SidePanel.js";
 import Breadcrumbs from "./Breadcrumbs.js";
@@ -98,7 +90,6 @@ export {
     ListItemLink,
     ListSubheader,
     Accordion,
-    Accordion as ExpansionPanel,
     ExpandableListItem,
     Divider,
 };
@@ -114,13 +105,4 @@ export {
     TablePagination,
 };
 
-export {
-    FormRoot,
-    FormError,
-    CancelButton,
-    SubmitButton,
-    IconSubmitButton,
-    DeleteForm,
-};
-
-export { Spinner, Popup, SidePanel, Breadcrumbs, Pagination };
+export { Popup, SidePanel, Breadcrumbs, Pagination };

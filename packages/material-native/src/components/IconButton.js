@@ -1,9 +1,9 @@
 import React from "react";
-import { useIcon } from "@wq/react";
+import { useIcon, withWQ } from "@wq/react";
 import { IconButton as PaperIconButton, useTheme } from "react-native-paper";
 import PropTypes from "prop-types";
 
-export default function IconButton({ icon, onClick, onPress, color, ...rest }) {
+function IconButton({ icon, onClick, onPress, color, ...rest }) {
     const Icon = useIcon(icon),
         theme = useTheme();
     if (!onPress) {
@@ -30,3 +30,5 @@ IconButton.propTypes = {
     onPress: PropTypes.func,
     color: PropTypes.string,
 };
+
+export default withWQ(IconButton);
