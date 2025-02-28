@@ -4,7 +4,7 @@ import { IconButton as PaperIconButton, useTheme } from "react-native-paper";
 import PropTypes from "prop-types";
 
 function IconButton({ icon, onClick, onPress, color, ...rest }) {
-    const Icon = useIcon(icon),
+    const Icon = useIcon(icon) || "cancel",
         theme = useTheme();
     if (!onPress) {
         onPress = onClick;

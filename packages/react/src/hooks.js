@@ -34,7 +34,17 @@ export function mergeWQContexts(context1, context2) {
                 for (const ckey in value1) {
                     context[type][key][ckey] = value1[ckey];
                     if (ckey in value2) {
-                        Object.assign(context[type][key][ckey], value2[ckey]);
+                        if (
+                            typeof value1[ckey] === "object" &&
+                            typeof value2[ckey] === "object"
+                        ) {
+                            Object.assign(
+                                context[type][key][ckey],
+                                value2[ckey]
+                            );
+                        } else {
+                            context[type][key][ckey] = value2[ckey];
+                        }
                     }
                 }
                 for (const ckey in value2) {

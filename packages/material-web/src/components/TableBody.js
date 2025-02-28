@@ -1,3 +1,4 @@
 import { TableBody } from "@mui/material";
+import { withWQ } from "@wq/react";
 
-export default TableBody;
+export default withWQ(TableBody);

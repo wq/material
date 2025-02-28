@@ -1,3 +1,4 @@
 import { TableCell } from "@mui/material";
+import { withWQ } from "@wq/react";
 
-export default TableCell;
+export default withWQ(TableCell);

@@ -1,3 +1,4 @@
 import { Table } from "@mui/material";
+import { withWQ } from "@wq/react";
 
-export default Table;
+export default withWQ(Table);

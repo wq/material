@@ -1,3 +1,4 @@
 import { Switch } from "@mui/material";
+import { withWQ } from "@wq/react";
 
-export default Switch;
+export default withWQ(Switch);

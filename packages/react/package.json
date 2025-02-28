@@ -1,7 +1,7 @@
 {
     "name": "@wq/react",
-    "version": "2.1.0",
-    "description": "React renderer for use with @wq/app",
+    "version": "3.0.0-alpha.1",
+    "description": "React context and hooks for @wq projects",
     "type": "module",
     "main": "index.js",
     "react-native": "src/index.js",
@@ -30,8 +30,5 @@
     "homepage": "https://wq.io/@wq/react",
     "dependencies": {
         "param-case": "^3.0.4"
-    },
-    "devDependencies": {
-        "@testing-library/react": "^16.2.0"
     }
 }

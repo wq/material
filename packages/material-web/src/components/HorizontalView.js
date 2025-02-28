@@ -1,8 +1,9 @@
 import React from "react";
 import { Box } from "@mui/material";
+import { withWQ } from "@wq/react";
 import PropTypes from "prop-types";
 
-export default function HorizontalView({ children, ...rest }) {
+function HorizontalView({ children, ...rest }) {
     return (
         <Box
             {...rest}
@@ -22,3 +23,5 @@ export default function HorizontalView({ children, ...rest }) {
 HorizontalView.propTypes = {
     children: PropTypes.node,
 };
+
+export default withWQ(HorizontalView);

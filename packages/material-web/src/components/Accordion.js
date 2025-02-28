@@ -4,16 +4,10 @@ import {
     AccordionSummary,
     AccordionDetails,
 } from "@mui/material";
-import { useIcon } from "@wq/react";
+import { useIcon, withWQ } from "@wq/react";
 import PropTypes from "prop-types";
 
-export default function Accordion({
-    summary,
-    children,
-    open,
-    onToggle,
-    ...rest
-}) {
+function Accordion({ summary, children, open, onToggle, ...rest }) {
     const ExpandMoreIcon = useIcon("expand") || (() => "V");
     let handleToggle;
     if (onToggle) {
@@ -37,3 +31,5 @@ Accordion.propTypes = {
     open: PropTypes.bool,
     onToggle: PropTypes.func,
 };
+
+export default withWQ(Accordion);

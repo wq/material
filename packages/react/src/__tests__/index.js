@@ -1,6 +1,11 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import { useComponents, withWQ, createFallbackComponent } from "../hooks.js";
+import {
+    useComponents,
+    withWQ,
+    createFallbackComponent,
+    mergeWQContexts,
+} from "../hooks.js";
 
 const TestComponentFallback = {
     components: {
@@ -46,4 +51,157 @@ test("wq override", () => {
     );
     expect(console.warn).not.toHaveBeenCalled();
     expect(getByText("Test Component").className).toBe("test");
+});
+
+test("merge contexts", () => {
+    const Test = () => null,
+        TestIcon = () => null;
+
+    expect(mergeWQContexts({}, {})).toEqual({
+        fallback: {
+            config: {},
+            messages: {},
+            components: {},
+            icons: {},
+        },
+        defaults: {
+            config: {},
+            messages: {},
+            components: {},
+            icons: {},
+        },
+        overrides: {
+            config: {},
+            messages: {},
+            components: {},
+            icons: {},
+        },
+    });
+    expect(
+        mergeWQContexts(
+            {
+                fallback: {
+                    components: {
+                        Test,
+                    },
+                },
+                defaults: { config: { test: 1 } },
+                overrides: {
+                    icons: {
+                        TestIcon,
+                    },
+                },
+            },
+            {}
+        )
+    ).toEqual({
+        fallback: {
+            config: {},
+            messages: {},
+            components: {
+                Test,
+            },
+            icons: {},
+        },
+        defaults: {
+            config: { test: 1 },
+            messages: {},
+            components: {},
+            icons: {},
+        },
+        overrides: {
+            config: {},
+            messages: {},
+            components: {},
+            icons: {
+                TestIcon,
+            },
+        },
+    });
+    expect(
+        mergeWQContexts(
+            {},
+            {
+                fallback: {
+                    components: {
+                        Test,
+                    },
+                },
+                defaults: { config: { test: 1 } },
+                overrides: {
+                    icons: {
+                        TestIcon,
+                    },
+                },
+            }
+        )
+    ).toEqual({
+        fallback: {
+            config: {},
+            messages: {},
+            components: {
+                Test,
+            },
+            icons: {},
+        },
+        defaults: {
+            config: { test: 1 },
+            messages: {},
+            components: {},
+            icons: {},
+        },
+        overrides: {
+            config: {},
+            messages: {},
+            components: {},
+            icons: {
+                TestIcon,
+            },
+        },
+    });
+    expect(
+        mergeWQContexts(
+            {
+                fallback: {
+                    components: {
+                        Test,
+                    },
+                },
+                defaults: {
+                    config: { test2: { info: 1, test: true } },
+                },
+            },
+            {
+                defaults: { config: { test: 1, test2: { test: false } } },
+                overrides: {
+                    icons: {
+                        TestIcon,
+                    },
+                },
+            }
+        )
+    ).toEqual({
+        fallback: {
+            config: {},
+            messages: {},
+            components: {
+                Test,
+            },
+            icons: {},
+        },
+        defaults: {
+            config: { test: 1, test2: { info: 1, test: false } },
+            messages: {},
+            components: {},
+            icons: {},
+        },
+        overrides: {
+            config: {},
+            messages: {},
+            components: {},
+            icons: {
+                TestIcon,
+            },
+        },
+    });
 });

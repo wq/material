@@ -1,3 +1,4 @@
 import { TablePagination } from "@mui/material";
+import { withWQ } from "@wq/react";
 
-export default TablePagination;
+export default withWQ(TablePagination);

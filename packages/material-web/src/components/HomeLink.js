@@ -1,20 +1,26 @@
 import React from "react";
-import { Link, useIcon } from "@wq/react";
-import { Button } from "@mui/material";
+import { useComponents, useIcon, withWQ } from "@wq/react";
+import ButtonLink from "./ButtonLink.js";
 import PropTypes from "prop-types";
 
-export default function HomeLink({ to, label, active, ...rest }) {
-    const HomeIcon = useIcon("home") || (() => "Home");
+const HomeLinkFallback = {
+    components: {
+        ButtonLink,
+    },
+};
+
+function HomeLink({ to, label, active, ...rest }) {
+    const HomeIcon = useIcon("home") || (() => "Home"),
+        { ButtonLink } = useComponents();
     return (
-        <Button
-            component={Link}
+        <ButtonLink
             to={to}
             color={active ? "inherit" : "primary"}
             aria-label={label}
             {...rest}
         >
             <HomeIcon sx={{ verticalAlign: "middle" }} />
-        </Button>
+        </ButtonLink>
     );
 }
 
@@ -23,3 +29,5 @@ HomeLink.propTypes = {
     label: PropTypes.string,
     active: PropTypes.bool,
 };
+
+export default withWQ(HomeLink, { fallback: HomeLinkFallback });

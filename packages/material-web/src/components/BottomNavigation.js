@@ -1,3 +1,4 @@
 import { BottomNavigation } from "@mui/material";
+import { withWQ } from "@wq/react";
 
-export default BottomNavigation;
+export default withWQ(BottomNavigation);

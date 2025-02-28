@@ -1,14 +1,28 @@
 import React from "react";
 import { Paper, Breadcrumbs as MuiBreadcrumbs } from "@mui/material";
-
-import { useReverse, useComponents, useIcon } from "@wq/react";
-
+import ButtonLink from "./ButtonLink.js";
+import HomeLink from "./HomeLink.js";
+import { useComponents, useIcon, withWQ } from "@wq/react";
+import { useReverse } from "./Link.js";
 import PropTypes from "prop-types";
 
-export default function Breadcrumbs({ links }) {
-    const reverse = useReverse(),
-        { ButtonLink, HomeLink } = useComponents(),
-        Separator = useIcon("breadcrumb-separator") || (() => ">");
+const BreadcrumbsFallback = {
+    components: {
+        ButtonLink,
+        HomeLink,
+        useReverse,
+    },
+    icons: {
+        BreadcrumbSeparator() {
+            return ">";
+        },
+    },
+};
+
+function Breadcrumbs({ links }) {
+    const { ButtonLink, HomeLink, useReverse } = useComponents(),
+        reverse = useReverse(),
+        Separator = useIcon("breadcrumb-separator");
 
     if (!links) {
         links = [{ url: reverse("index"), label: "Home", active: true }];
@@ -52,3 +66,5 @@ export default function Breadcrumbs({ links }) {
 Breadcrumbs.propTypes = {
     links: PropTypes.arrayOf(PropTypes.object),
 };
+
+export default withWQ(Breadcrumbs, { fallback: BreadcrumbsFallback });

@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import { Tabs } from "@mui/material";
+import { withWQ } from "@wq/react";
 
-export default function TabGroup(props) {
+function TabGroup(props) {
     if (props.value || props.setValue) {
         return <ControlledTabGroup {...props} />;
     } else {
         return <UncontrolledTabGroup {...props} />;
     }
 }
+
+export default withWQ(TabGroup);
 
 function UncontrolledTabGroup({ children, ...rest }) {
     const tabs = React.Children.toArray(children),

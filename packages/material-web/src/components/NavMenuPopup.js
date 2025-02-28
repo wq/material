@@ -1,11 +1,27 @@
 import React from "react";
 import { Drawer, AppBar, Toolbar, Typography } from "@mui/material";
-import { useViewComponents, useComponents, useSiteTitle } from "@wq/react";
+import { useComponents, useConfig, withWQ } from "@wq/react";
+import { NavMenu } from "./NavMenuFixed.js";
+import { Logo } from "./Logo.js";
 
-export default function NavMenuPopup({ open, onClose }) {
-    const title = useSiteTitle(),
-        { NavMenu } = useViewComponents(),
-        { Logo } = useComponents();
+export function useSiteTitle() {
+    return useConfig().site_title;
+}
+
+const NavMenuPopupFallback = {
+    config: {
+        site_title: "Project",
+    },
+    components: {
+        NavMenu,
+        Logo,
+        useSiteTitle,
+    },
+};
+
+function NavMenuPopup({ open, onClose }) {
+    const { NavMenu, Logo, useSiteTitle } = useComponents(),
+        title = useSiteTitle();
     return (
         <Drawer
             open={open}
@@ -28,3 +44,7 @@ export default function NavMenuPopup({ open, onClose }) {
         </Drawer>
     );
 }
+
+export default withWQ(NavMenuPopup, {
+    fallback: NavMenuPopupFallback,
+});

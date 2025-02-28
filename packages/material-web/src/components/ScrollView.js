@@ -1,22 +1,26 @@
 import React from "react";
+import { Box } from "@mui/material";
+import { withWQ } from "@wq/react";
 import PropTypes from "prop-types";
 
-export default function ScrollView({ children, style }) {
+function ScrollView({ children, sx }) {
     return (
-        <div
-            style={{
+        <Box
+            sx={{
                 overflowX: "hidden",
                 overflowY: "auto",
                 flex: 1,
-                ...style,
+                ...sx,
             }}
         >
             {children}
-        </div>
+        </Box>
     );
 }
 
 ScrollView.propTypes = {
     children: PropTypes.node,
-    style: PropTypes.object,
+    sx: PropTypes.object,
 };
+
+export default withWQ(ScrollView);

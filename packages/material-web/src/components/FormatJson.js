@@ -1,7 +1,8 @@
 import React from "react";
+import { withWQ } from "@wq/react";
 import PropTypes from "prop-types";
 
-export default function FormatJson({ json }) {
+function FormatJson({ json }) {
     return (
         <pre>
             <code>{JSON.stringify(json, null, 4)}</code>
@@ -12,3 +13,5 @@ export default function FormatJson({ json }) {
 FormatJson.propTypes = {
     json: PropTypes.object,
 };
+
+export default withWQ(FormatJson);

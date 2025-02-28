@@ -1,7 +1,14 @@
 import React from "react";
-import { useComponents } from "@wq/react";
+import { useComponents, withWQ } from "@wq/react";
+import Link from "./Link.js";
 
-export default function FooterContent() {
+const FooterContentFallback = {
+    components: {
+        Link,
+    },
+};
+
+function FooterContent() {
     const { Link } = useComponents();
     return (
         <>
@@ -12,3 +19,5 @@ export default function FooterContent() {
         </>
     );
 }
+
+export default withWQ(FooterContent, { fallback: FooterContentFallback });

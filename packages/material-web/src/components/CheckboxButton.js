@@ -1,3 +1,4 @@
 import { Checkbox } from "@mui/material";
+import { withWQ } from "@wq/react";
 
-export default Checkbox;
+export default withWQ(Checkbox, "CheckboxButton");

@@ -1,8 +1,9 @@
 import React from "react";
 import { Box } from "@mui/material";
+import { withWQ } from "@wq/react";
 import PropTypes from "prop-types";
 
-export default function Container({ children }) {
+function Container({ children }) {
     return (
         <Box
             sx={{
@@ -18,3 +19,5 @@ export default function Container({ children }) {
 Container.propTypes = {
     children: PropTypes.node,
 };
+
+export default withWQ(Container);

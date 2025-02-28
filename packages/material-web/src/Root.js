@@ -1,21 +1,45 @@
 import React, { useMemo } from "react";
-import { App as DefaultApp, usePlugin } from "@wq/react";
+import { useConfig, withWQ } from "@wq/react";
 import {
     createTheme as createMuiTheme,
     ThemeProvider,
     CssBaseline,
 } from "@mui/material";
+import * as components from "./components/index.js";
+import * as icons from "./icons.js";
 
-export default function App() {
-    const { theme } = usePlugin("material").config,
+const defaultConfig = {
+    material: {
+        theme: {
+            primary: "#7500ae",
+            secondary: "#0088bd",
+        },
+    },
+};
+
+function Root({ children }) {
+    const {
+            material: { theme },
+        } = useConfig(),
         muiTheme = useMemo(() => createTheme(theme), [theme]);
     return (
         <ThemeProvider theme={muiTheme}>
             <CssBaseline />
-            <DefaultApp />
+            {children}
         </ThemeProvider>
     );
 }
+
+export default withWQ(Root, {
+    defaults: {
+        config: defaultConfig,
+        components: { ...components },
+        icons: {
+            ...icons,
+            List: icons.ListIcon,
+        },
+    },
+});
 
 function createTheme(theme) {
     const { type, primary, secondary, background } = theme;

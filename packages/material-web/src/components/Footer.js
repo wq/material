@@ -1,7 +1,16 @@
 import React from "react";
-import { useComponents } from "@wq/react";
+import { useComponents, withWQ } from "@wq/react";
+import Typography from "./Typography.js";
+import FooterContent from "./FooterContent.js";
 
-export default function Footer() {
+const FooterFallback = {
+    components: {
+        Typography,
+        FooterContent,
+    },
+};
+
+function Footer() {
     const { Typography, FooterContent } = useComponents();
 
     return (
@@ -21,3 +30,5 @@ export default function Footer() {
         </div>
     );
 }
+
+export default withWQ(Footer, { fallback: FooterFallback });

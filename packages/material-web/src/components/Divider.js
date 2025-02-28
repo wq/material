@@ -1,3 +1,4 @@
 import { Divider } from "@mui/material";
+import { withWQ } from "@wq/react";
 
-export default Divider;
+export default withWQ(Divider);

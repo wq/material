@@ -1,13 +1,11 @@
 import React from "react";
-import { useIcon } from "@wq/react";
+import { useIcon, withWQ } from "@wq/react";
 import { IconButton as MuiIconButton } from "@mui/material";
+import { Cancel } from "../icons.js";
 import PropTypes from "prop-types";
 
-export default function IconButton({ icon, size = "large", ...rest }) {
-    const Icon = useIcon(icon);
-    if (!Icon) {
-        throw new Error(`"${icon}" is not a registered icon!`);
-    }
+function IconButton({ icon, size = "large", ...rest }) {
+    const Icon = useIcon(icon) || Cancel;
     return (
         <MuiIconButton size={size} {...rest}>
             <Icon />
@@ -19,3 +17,5 @@ IconButton.propTypes = {
     icon: PropTypes.string,
     size: PropTypes.string,
 };
+
+export default withWQ(IconButton);

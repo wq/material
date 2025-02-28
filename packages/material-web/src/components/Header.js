@@ -1,13 +1,40 @@
 import React, { useState } from "react";
 import { AppBar, Toolbar, Typography } from "@mui/material";
-import { useSiteTitle, useBreadcrumbs, useComponents } from "@wq/react";
+import { useComponents, withWQ } from "@wq/react";
 import { useMinWidth } from "../hooks.js";
+import Logo from "./Logo.js";
+import Breadcrumbs from "./Breadcrumbs.js";
+import IconButton from "./IconButton.js";
+import NavMenuPopup, { useSiteTitle } from "./NavMenuPopup.js";
 
-export default function Header() {
-    const title = useSiteTitle(),
+const HeaderFallback = {
+    config: {
+        site_title: "Project",
+    },
+    components: {
+        Logo,
+        Breadcrumbs,
+        IconButton,
+        NavMenuPopup,
+        useSiteTitle,
+        useBreadcrumbs() {
+            console.warn("Override useBreadcrumbs() to provide links");
+            return [];
+        },
+    },
+};
+
+function Header() {
+    const {
+            Logo,
+            Breadcrumbs,
+            IconButton,
+            NavMenuPopup,
+            useSiteTitle,
+            useBreadcrumbs,
+        } = useComponents(),
+        title = useSiteTitle(),
         links = useBreadcrumbs(),
-        { Logo, SiteTitle, Breadcrumbs, IconButton, NavMenuPopup } =
-            useComponents(),
         fixedMenu = useMinWidth(600),
         [open, setOpen] = useState(false);
     return (
@@ -25,9 +52,7 @@ export default function Header() {
                             edge="start"
                         />
                     )}
-                    <Typography variant="h6">
-                        <SiteTitle title={title} />
-                    </Typography>
+                    <Typography variant="h6">{title}</Typography>
                 </Toolbar>
             </AppBar>
             <Breadcrumbs links={links} />
@@ -37,3 +62,5 @@ export default function Header() {
         </>
     );
 }
+
+export default withWQ(Header, { fallback: HeaderFallback });

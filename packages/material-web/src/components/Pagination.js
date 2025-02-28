@@ -1,13 +1,20 @@
 import React from "react";
-
 import { TablePagination, Paper } from "@mui/material";
+import { useComponents, withWQ } from "@wq/react";
+import { useReverse, useNav, useRouteInfo } from "./Link.js";
 
-import { useRenderContext, useRouteInfo, useReverse, useNav } from "@wq/react";
+const PaginationFallback = {
+    components: {
+        useReverse,
+        useNav,
+        useRouteInfo,
+    },
+};
 
-export default function Pagination() {
-    const reverse = useReverse(),
+function Pagination({ multiple, page: pageNum, count, per_page }) {
+    const { useReverse, useNav, useRouteInfo } = useComponents(),
+        reverse = useReverse(),
         nav = useNav(),
-        { multiple, page: pageNum, count, per_page } = useRenderContext(),
         { name: routeName, params } = useRouteInfo();
 
     if (!(multiple && count && per_page)) {
@@ -42,3 +49,7 @@ export default function Pagination() {
         </Paper>
     );
 }
+
+export default withWQ(Pagination, {
+    fallback: PaginationFallback,
+});

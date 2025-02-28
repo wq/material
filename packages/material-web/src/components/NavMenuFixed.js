@@ -1,16 +1,25 @@
 import React from "react";
-import { useViewComponents, useRouteInfo } from "@wq/react";
+import { createFallbackComponent, useComponents, withWQ } from "@wq/react";
 import { useMinWidth } from "../hooks.js";
 import { Paper } from "@mui/material";
 
-export default function NavMenuFixed() {
-    const { NavMenu, Index } = useViewComponents(),
-        { name } = useRouteInfo(),
-        fixedMenu = useMinWidth(600);
+export const NavMenu = createFallbackComponent("NavMenu", "@wq/router");
+
+function useShowNavMenuFixed() {
+    return useMinWidth(600);
+}
+
+const NavMenuFixedFallback = {
+    components: {
+        NavMenu,
+        useShowNavMenuFixed,
+    },
+};
+
+function NavMenuFixed() {
+    const { NavMenu, useShowNavMenuFixed } = useComponents(),
+        fixedMenu = useShowNavMenuFixed();
     if (!fixedMenu) {
-        return null;
-    }
-    if (name === "index" && NavMenu === Index) {
         return null;
     }
     return (
@@ -30,3 +39,7 @@ export default function NavMenuFixed() {
         </Paper>
     );
 }
+
+export default withWQ(NavMenuFixed, {
+    fallback: NavMenuFixedFallback,
+});

@@ -1,14 +1,9 @@
 import React from "react";
 import { Drawer } from "@mui/material";
+import { withWQ } from "@wq/react";
 import PropTypes from "prop-types";
 
-export default function Popup({
-    anchor = "bottom",
-    children,
-    open,
-    onClose,
-    ...rest
-}) {
+function Popup({ anchor = "bottom", children, open, onClose, ...rest }) {
     return (
         <Drawer anchor={anchor} open={open} onClose={onClose} {...rest}>
             {children}
@@ -22,3 +17,5 @@ Popup.propTypes = {
     open: PropTypes.bool,
     onClose: PropTypes.func,
 };
+
+export default withWQ(Popup);

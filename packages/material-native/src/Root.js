@@ -8,6 +8,7 @@ import {
     Provider as PaperProvider,
 } from "react-native-paper";
 import * as components from "./components/index.js";
+import * as icons from "./icons.js";
 
 const THEMES = {
     "light-2": MD2LightTheme,
@@ -32,7 +33,11 @@ function Root({ children }) {
 }
 
 export default withWQ(Root, {
-    defaults: { config: defaultConfig, components: { ...components } },
+    defaults: {
+        config: defaultConfig,
+        components: { ...components },
+        icons: { ...icons, List: icons.ListIcon },
+    },
 });
 
 function createTheme({

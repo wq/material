@@ -1,14 +1,21 @@
 import React from "react";
 import { Fab as MuiFab } from "@mui/material";
-import { Link } from "@wq/react";
+import { useComponents, useIcon, withWQ } from "@wq/react";
+import { NavLink } from "./Link.js";
 import PropTypes from "prop-types";
-import { useIcon } from "@wq/react";
 
-export default function Fab({ icon, to, ...rest }) {
-    const Icon = useIcon(icon);
+const FabFallback = {
+    components: {
+        NavLink,
+    },
+};
+
+function Fab({ icon, to, ...rest }) {
+    const Icon = useIcon(icon),
+        { NavLink } = useComponents();
     return (
         <MuiFab
-            component={Link}
+            component={NavLink}
             to={to}
             color="primary"
             style={{
@@ -28,3 +35,5 @@ Fab.propTypes = {
     icon: PropTypes.string,
     to: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
 };
+
+export default withWQ(Fab, { fallback: FabFallback });

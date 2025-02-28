@@ -1,14 +1,18 @@
 import React, { useState } from "react";
-import { useComponents } from "@wq/react";
+import { useComponents, withWQ } from "@wq/react";
 import { Collapse } from "@mui/material";
+import ListItem from "./ListItem.js";
+import IconButton from "./IconButton.js";
 import PropTypes from "prop-types";
 
-export default function ExpandableListItem({
-    children,
-    open,
-    onToggle,
-    ...rest
-}) {
+const ExpandableListItemFallback = {
+    components: {
+        ListItem,
+        IconButton,
+    },
+};
+
+function ExpandableListItem({ children, open, onToggle, ...rest }) {
     const [summary, ...details] = React.Children.toArray(children),
         [internalOpen, setOpen] = useState(false),
         { ListItem, IconButton } = useComponents();
@@ -48,3 +52,7 @@ ExpandableListItem.propTypes = {
     open: PropTypes.bool,
     onToggle: PropTypes.func,
 };
+
+export default withWQ(ExpandableListItem, {
+    fallback: ExpandableListItemFallback,
+});

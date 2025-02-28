@@ -1,5 +1,5 @@
 import React from "react";
-import { Checkbox as PaperCheckbox, useTheme } from "react-native-paper";
+import { Checkbox, useTheme } from "react-native-paper";
 import PropTypes from "prop-types";
 import { withWQ } from "@wq/react";
 
@@ -10,7 +10,7 @@ const STATUSES = {
     null: "indeterminate",
 };
 
-function Checkbox({ checked, color, ...props }) {
+function CheckboxButton({ checked, color, ...props }) {
     const status = STATUSES[checked],
         theme = useTheme();
     if (color === "primary") {
@@ -18,12 +18,12 @@ function Checkbox({ checked, color, ...props }) {
     } else if (color === "secondary") {
         color = theme.colors.accent;
     }
-    return <PaperCheckbox status={status} {...props} />;
+    return <Checkbox status={status} {...props} />;
 }
 
-Checkbox.propTypes = {
+CheckboxButton.propTypes = {
     checked: PropTypes.bool,
     color: PropTypes.string,
 };
 
-export default withWQ(Checkbox);
+export default withWQ(CheckboxButton);

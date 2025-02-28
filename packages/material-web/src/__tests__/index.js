@@ -1,5 +1,5 @@
-import material from "../index.js";
+import { Root } from "../index.js";
 
 test("it loads", () => {
-    expect(material.name).toBe("material");
+    expect(Root.displayName).toBe("Root:wq");
 });
