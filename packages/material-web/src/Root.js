@@ -6,6 +6,7 @@ import {
     CssBaseline,
 } from "@mui/material";
 import * as components from "./components/index.js";
+import { useMinWidth } from "./hooks.js";
 import * as icons from "./icons.js";
 
 const defaultConfig = {
@@ -33,7 +34,7 @@ function Root({ children }) {
 export default withWQ(Root, {
     defaults: {
         config: defaultConfig,
-        components: { ...components },
+        components: { ...components, useMinWidth },
         icons: {
             ...icons,
             List: icons.ListIcon,

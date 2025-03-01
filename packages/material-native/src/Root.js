@@ -8,6 +8,7 @@ import {
     Provider as PaperProvider,
 } from "react-native-paper";
 import * as components from "./components/index.js";
+import { useMinWidth } from "./hooks.js";
 import * as icons from "./icons.js";
 
 const THEMES = {
@@ -35,7 +36,7 @@ function Root({ children }) {
 export default withWQ(Root, {
     defaults: {
         config: defaultConfig,
-        components: { ...components },
+        components: { ...components, useMinWidth },
         icons: { ...icons, List: icons.ListIcon },
     },
 });
