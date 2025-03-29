@@ -24,7 +24,7 @@ function Breadcrumbs({ links }) {
         reverse = useReverse(),
         Separator = useIcon("breadcrumb-separator");
 
-    if (!links) {
+    if (!links || links.length === 0) {
         links = [{ url: reverse("index"), label: "Home", active: true }];
     }
 

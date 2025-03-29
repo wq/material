@@ -1,29 +1,26 @@
 import React from "react";
 import {
     ListItem as MuiListItem,
+    ListItemButton,
     ListItemText,
     ListItemIcon,
-    ListItemSecondaryAction,
 } from "@mui/material";
 import PropTypes from "prop-types";
 import { useIcon, withWQ } from "@wq/react";
 
-function ListItem({ children, description, icon, secondaryAction, ...rest }) {
-    const Icon = useIcon(icon);
+function ListItem({ children, description, icon, button, ...rest }) {
+    const Icon = useIcon(icon),
+        ListItem = button ? ListItemButton : MuiListItem;
+
     return (
-        <MuiListItem {...rest}>
+        <ListItem {...rest}>
             {Icon && (
                 <ListItemIcon>
                     <Icon />
                 </ListItemIcon>
             )}
             <ListItemText primary={children} secondary={description} />
-            {secondaryAction && (
-                <ListItemSecondaryAction>
-                    {secondaryAction}
-                </ListItemSecondaryAction>
-            )}
-        </MuiListItem>
+        </ListItem>
     );
 }
 
@@ -31,7 +28,7 @@ ListItem.propTypes = {
     children: PropTypes.node,
     description: PropTypes.node,
     icon: PropTypes.string,
-    secondaryAction: PropTypes.node,
+    button: PropTypes.bool,
 };
 
 export default withWQ(ListItem);

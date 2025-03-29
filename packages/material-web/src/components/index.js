@@ -9,6 +9,7 @@ import View from "./View.js";
 import ScrollView from "./ScrollView.js";
 import HorizontalView from "./HorizontalView.js";
 import Text from "./Text.js";
+import Img from "./Img.js";
 import Typography from "./Typography.js";
 import FormatJson from "./FormatJson.js";
 
@@ -49,6 +50,11 @@ import SidePanel from "./SidePanel.js";
 import Breadcrumbs from "./Breadcrumbs.js";
 import Pagination from "./Pagination.js";
 
+import Badge from "./Badge.js";
+import Grid from "./Grid.js";
+import Menu from "./Menu.js";
+import MenuItem from "./MenuItem.js";
+
 export {
     Container,
     Header,
@@ -61,6 +67,7 @@ export {
     ScrollView,
     HorizontalView,
     Text,
+    Img,
     Typography,
     FormatJson,
 };
@@ -104,3 +111,5 @@ export {
 };
 
 export { Popup, SidePanel, Breadcrumbs, Pagination };
+
+export { Badge, Grid, Menu, MenuItem };

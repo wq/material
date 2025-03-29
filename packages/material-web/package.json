@@ -29,14 +29,22 @@
     },
     "homepage": "https://wq.io/@wq/material",
     "dependencies": {
-        "@emotion/react": "^11.11.1",
-        "@emotion/styled": "^11.11.0",
-        "@mui/icons-material": "^5.11.16",
-        "@mui/material": "^5.13.5",
-        "@wq/react": "file:../react"
+        "@wq/react": "^3.0.0-a1-dev4.g2569553"
+    },
+    "peerDependencies": {
+        "@emotion/react": "*",
+        "@emotion/styled": "*",
+        "@mui/icons-material": "*",
+        "@mui/material": "*",
+        "react": "*",
+        "react-dom": "*"
     },
     "devDependencies": {
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0"
+        "@emotion/react": "^11.14.0",
+        "@emotion/styled": "^11.14.0",
+        "@mui/icons-material": "^6.4.7",
+        "@mui/material": "^6.4.7",
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0"
     }
 }

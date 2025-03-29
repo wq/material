@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { useConfig, withWQ } from "@wq/react";
+import { withWQ } from "@wq/react";
 import {
     MD2LightTheme,
     MD3LightTheme,
@@ -18,37 +18,45 @@ const THEMES = {
     "dark-3": MD3DarkTheme,
 };
 
-const defaultConfig = {
-    material: {
-        theme: {
-            primary: "#7500ae",
-            secondary: "#0088bd",
-        },
-    },
+const defaultTheme = {
+    type: "light",
+    version: 3,
+    primary: "#7500ae",
+    secondary: "#0088bd",
 };
 
-function Root({ children }) {
-    const { material: { theme: configTheme } = {} } = useConfig(),
-        theme = useMemo(() => createTheme(configTheme), [configTheme]);
-    return <PaperProvider theme={theme}>{children}</PaperProvider>;
+function Root({ children, theme }) {
+    if (theme) {
+        return <ThemeRoot theme={theme}>{children}</ThemeRoot>;
+    } else {
+        return children || null;
+    }
+}
+
+function ThemeRoot({ children, theme }) {
+    const paperTheme = useMemo(() => createTheme(theme), [theme]);
+    return <PaperProvider theme={paperTheme}>{children}</PaperProvider>;
 }
 
 export default withWQ(Root, {
     defaults: {
-        config: defaultConfig,
         components: { ...components, useMinWidth },
-        icons: { ...icons, List: icons.ListIcon },
+        icons: { ...icons, List: icons.ListIcon, Menu: icons.MenuIcon },
     },
 });
 
-function createTheme({
-    type = "light",
-    version = 3,
-    primary,
-    secondary,
-    background,
-}) {
-    const colors = {},
+function createTheme(theme) {
+    if (theme === true) {
+        theme = defaultTheme;
+    }
+    const {
+            type = "light",
+            version = 3,
+            primary,
+            secondary,
+            background,
+        } = theme || {},
+        colors = {},
         base = THEMES[`${type}-${version}`];
     if (!base) {
         console.warn(`Unknown base theme type=${type} version=${version}`);

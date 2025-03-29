@@ -2,7 +2,7 @@ import React from "react";
 import { Drawer, AppBar, Toolbar, Typography } from "@mui/material";
 import { useComponents, useConfig, withWQ } from "@wq/react";
 import { NavMenu } from "./NavMenuFixed.js";
-import { Logo } from "./Logo.js";
+import Logo from "./Logo.js";
 
 export function useSiteTitle() {
     return useConfig().site_title;

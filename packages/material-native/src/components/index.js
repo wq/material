@@ -50,6 +50,11 @@ import SidePanel from "./SidePanel.js";
 import Breadcrumbs from "./Breadcrumbs.js";
 import Pagination from "./Pagination.js";
 
+import Badge from "./Badge.js";
+import Grid from "./Grid.js";
+import Menu from "./Menu.js";
+import MenuItem from "./MenuItem.js";
+
 export {
     Container,
     Header,
@@ -106,3 +111,5 @@ export {
 };
 
 export { Popup, SidePanel, Breadcrumbs, Pagination };
+
+export { Badge, Grid, Menu, MenuItem };

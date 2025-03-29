@@ -173,8 +173,9 @@ export function createFallbackComponent(
     expectedComponent = "Root"
 ) {
     function Fallback() {
+        const formatName = name.startsWith("use") ? `${name}()` : `<${name}/>`;
         console.warn(
-            `Missing <${name}/>!  Try rendering within <${expectedComponent}/> from ${expectedModule}.`
+            `Missing ${formatName}!  Try rendering within <${expectedComponent}/> from ${expectedModule}.`
         );
         return null;
     }
