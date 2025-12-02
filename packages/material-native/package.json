@@ -1,6 +1,6 @@
 {
     "name": "@wq/material-native",
-    "version": "2.0.0",
+    "version": "3.0.0-alpha.0",
     "description": "React Native and Expo bindings for @wq/material",
     "type": "module",
     "main": "src/index.js",
@@ -24,9 +24,9 @@
     "author": "S. Andrew Sheppard",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/wq/wq.app/issues"
+        "url": "https://github.com/wq/material/issues"
     },
-    "homepage": "https://wq.io/@wq/material",
+    "homepage": "https://material.wq.io/@wq/material-native",
     "dependencies": {
         "@wq/react": "file:../react"
     },

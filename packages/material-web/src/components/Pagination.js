@@ -29,8 +29,8 @@ function Pagination({ multiple, page: pageNum, count, per_page }) {
                 {
                     ...params,
                     ...newParams,
-                }
-            )
+                },
+            ),
         );
     };
     const handleChangePage = (evt, page) => updateParams({ page: page + 1 });

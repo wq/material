@@ -1,19 +1,38 @@
 import React from "react";
 import {
     ListItem as MuiListItem,
-    ListItemButton,
+    ListItemButton as MuiListItemButton,
     ListItemText,
     ListItemIcon,
 } from "@mui/material";
 import PropTypes from "prop-types";
 import { useIcon, withWQ } from "@wq/react";
 
-function ListItem({ children, description, icon, button, ...rest }) {
+function ListItemButton({ children, ...rest }) {
+    return (
+        <MuiListItem disablePadding {...rest}>
+            <MuiListItemButton>{children}</MuiListItemButton>
+        </MuiListItem>
+    );
+}
+
+function ListItem({
+    children,
+    description,
+    icon,
+    button,
+    secondaryAction,
+    ...rest
+}) {
     const Icon = useIcon(icon),
-        ListItem = button ? ListItemButton : MuiListItem;
+        ListItem = button
+            ? secondaryAction
+                ? ListItemButton
+                : MuiListItemButton
+            : MuiListItem;
 
     return (
-        <ListItem {...rest}>
+        <ListItem {...rest} secondaryAction={secondaryAction}>
             {Icon && (
                 <ListItemIcon>
                     <Icon />

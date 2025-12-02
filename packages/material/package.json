@@ -1,6 +1,6 @@
 {
     "name": "@wq/material",
-    "version": "2.1.0",
+    "version": "3.0.0-alpha.0",
     "description": "React + Material UI renderer for use with @wq/app",
     "type": "module",
     "main": "src/index.js",
@@ -24,10 +24,10 @@
     "author": "S. Andrew Sheppard",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/wq/wq.app/issues"
+        "url": "https://github.com/wq/material/issues"
     },
-    "homepage": "https://wq.io/@wq/material",
+    "homepage": "https://material.wq.io/@wq/material",
     "devDependencies": {
-        "@wq/material-web": "^2.1.0"
+        "@wq/material-web": "^3.0.0-alpha.0"
     }
 }

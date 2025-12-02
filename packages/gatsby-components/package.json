@@ -1,0 +1,31 @@
+{
+    "name": "@wq/gatsby-components",
+    "version": "0.1.0",
+    "description": "Web bindings for @wq/material",
+    "type": "module",
+    "main": "index.js",
+    "scripts": {
+        "build": "npm run babel && npm run prettier",
+        "babel": "cd ../../ && npm run babel -- packages/gatsby-components/src --out-dir packages/gatsby-components/",
+        "prettier": "cd ../../ && npm run prettier -- --write packages/gatsby-components/",
+        "lint": "cd ../../ && npm run eslint packages/gatsby-components/{,src/,src/*/,src/*/*/}*.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wq/material.git",
+        "directory": "packages/gatsby-components"
+    },
+    "keywords": [
+        "wq",
+        "material",
+        "material-ui",
+        "gatsby"
+    ],
+    "author": "S. Andrew Sheppard",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/wq/material/issues"
+    },
+    "homepage": "https://material.wq.io/@wq/gatsby-components",
+    "devDependencies": {}
+}

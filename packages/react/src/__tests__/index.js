@@ -30,7 +30,7 @@ const TestComponentWithWQ = withWQ(TestComponent, {
 test("wq fallback", () => {
     render(<TestComponentWithWQ>Test Component</TestComponentWithWQ>);
     expect(console.warn).toHaveBeenCalledWith(
-        "Missing <View/>!  Try rendering within <Root/> from @wq/material."
+        "Missing <View/>!  Try rendering within <Root/> from @wq/material.",
     );
     console.warn.mockClear();
 });
@@ -47,7 +47,7 @@ test("wq override", () => {
             }}
         >
             Test Component
-        </TestComponentWithWQ>
+        </TestComponentWithWQ>,
     );
     expect(console.warn).not.toHaveBeenCalled();
     expect(getByText("Test Component").className).toBe("test");
@@ -92,8 +92,8 @@ test("merge contexts", () => {
                     },
                 },
             },
-            {}
-        )
+            {},
+        ),
     ).toEqual({
         fallback: {
             config: {},
@@ -133,8 +133,8 @@ test("merge contexts", () => {
                         TestIcon,
                     },
                 },
-            }
-        )
+            },
+        ),
     ).toEqual({
         fallback: {
             config: {},
@@ -178,8 +178,8 @@ test("merge contexts", () => {
                         TestIcon,
                     },
                 },
-            }
-        )
+            },
+        ),
     ).toEqual({
         fallback: {
             config: {},

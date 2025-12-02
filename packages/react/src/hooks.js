@@ -40,7 +40,7 @@ export function mergeWQContexts(context1, context2) {
                         ) {
                             Object.assign(
                                 context[type][key][ckey],
-                                value2[ckey]
+                                value2[ckey],
                             );
                         } else {
                             context[type][key][ckey] = value2[ckey];
@@ -118,7 +118,7 @@ export function WQ({ wq: overrides, defaults, fallback, children }) {
     const curValue = useWQContext(),
         value = useMemo(
             () => mergeWQContexts(curValue, { overrides, defaults, fallback }),
-            [curValue, overrides, defaults, fallback]
+            [curValue, overrides, defaults, fallback],
         );
     return <WQContext.Provider value={value}>{children}</WQContext.Provider>;
 }
@@ -154,14 +154,14 @@ export function withWQ(Component, optionsOrName) {
 export function createFallbackComponents(
     names,
     expectedModule,
-    expectedComponent = "Root"
+    expectedComponent = "Root",
 ) {
     const fallback = {};
     for (const name of names) {
         fallback[name] = createFallbackComponent(
             name,
             expectedModule,
-            expectedComponent
+            expectedComponent,
         );
     }
     return fallback;
@@ -170,12 +170,12 @@ export function createFallbackComponents(
 export function createFallbackComponent(
     name,
     expectedModule,
-    expectedComponent = "Root"
+    expectedComponent = "Root",
 ) {
     function Fallback() {
         const formatName = name.startsWith("use") ? `${name}()` : `<${name}/>`;
         console.warn(
-            `Missing ${formatName}!  Try rendering within <${expectedComponent}/> from ${expectedModule}.`
+            `Missing ${formatName}!  Try rendering within <${expectedComponent}/> from ${expectedModule}.`,
         );
         return null;
     }

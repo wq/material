@@ -1,6 +1,6 @@
 {
     "name": "@wq/react",
-    "version": "3.0.0-alpha.1",
+    "version": "3.0.0-alpha.0",
     "description": "React context and hooks for @wq projects",
     "type": "module",
     "main": "index.js",
@@ -25,9 +25,9 @@
     "author": "S. Andrew Sheppard",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/wq/wq.app/issues"
+        "url": "https://github.com/wq/material/issues"
     },
-    "homepage": "https://wq.io/@wq/react",
+    "homepage": "https://material.wq.io/@wq/react",
     "dependencies": {
         "param-case": "^3.0.4"
     }

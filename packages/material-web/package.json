@@ -1,6 +1,6 @@
 {
     "name": "@wq/material-web",
-    "version": "2.1.0",
+    "version": "3.0.0-alpha.0",
     "description": "Web bindings for @wq/material",
     "type": "module",
     "main": "index.js",
@@ -25,11 +25,11 @@
     "author": "S. Andrew Sheppard",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/wq/wq.app/issues"
+        "url": "https://github.com/wq/material/issues"
     },
-    "homepage": "https://wq.io/@wq/material",
+    "homepage": "https://material.wq.io/@wq/material-web",
     "dependencies": {
-        "@wq/react": "^3.0.0-a1-dev4.g2569553"
+        "@wq/react": "^3.0.0-alpha.0"
     },
     "peerDependencies": {
         "@emotion/react": "*",
@@ -40,11 +40,7 @@
         "react-dom": "*"
     },
     "devDependencies": {
-        "@emotion/react": "^11.14.0",
-        "@emotion/styled": "^11.14.0",
-        "@mui/icons-material": "^6.4.7",
-        "@mui/material": "^6.4.7",
-        "react": "^19.0.0",
-        "react-dom": "^19.0.0"
+        "@mui/icons-material": "^7.3.5",
+        "@mui/material": "^7.3.5"
     }
 }
