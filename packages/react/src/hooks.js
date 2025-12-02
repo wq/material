@@ -1,5 +1,5 @@
 import React, { useMemo, useContext } from "react";
-import { paramCase } from "param-case";
+import { paramCase } from "change-case";
 
 export const WQContext = React.createContext({
     fallback: {

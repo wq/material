@@ -1,41 +1,15 @@
 [![@wq/react][logo]][docs]
 
-**@wq/react** is a renderer plugin for [@wq/app] that seamlessly integrates with the [React] and [React Native] frameworks.  @wq/react provides a number of default [components] and [hooks] to facilitate rapid deployment of applications backed by @wq/app's storage, data model, routing, and syncing engines ([@wq/store], [@wq/model], [@wq/router], and [@wq/outbox], respectively.)
+**@wq/react** provides the base context and hooks to support the `wq` prop, which is leveraged by the following extensible libraries:
 
-@wq/react is meant to be used with [@wq/material], which provides a collection of ready-to-use Material Design interface components.
+- [@wq/material] - Material UI & React Native Paper integration
+- [@wq/map-gl] - Maplibre GL JS & Maplibre React Native integration
+- [@wq/form] - Formik integration for @wq/material and @wq/map-gl
 
 ### [Documentation][docs]
 
-[**Installation**][installation]
-&bull;
-[**API**][api]
-&bull;
-[**Components**][components]
-&bull;
-[Icons][icons]
-&bull;
-[Inputs][inputs]
-&bull;
-[Views][views]
-&bull;
-[**Hooks**][hooks]
-
 [logo]: https://wq.io/images/@wq/react.svg
-[docs]: https://wq.io/@wq/react
-[installation]: https://wq.io/@wq/react#installation
-[api]: https://wq.io/@wq/react#api
-[components]: https://wq.io/components/
-[icons]: https://wq.io/icons/
-[inputs]: https://wq.io/inputs/
-[views]: https://wq.io/views/
-[hooks]: https://wq.io/hooks/
-
-[@wq/app]: https://wq.io/@wq/app
-[@wq/store]: https://wq.io/@wq/store
-[@wq/model]: https://wq.io/@wq/model
-[@wq/router]: https://wq.io/@wq/router
-[@wq/outbox]: https://wq.io/@wq/outbox
-[@wq/material]: https://wq.io/@wq/material
-
-[React]: https://reactjs.org
-[React Native]: https://reactnative.dev/
+[docs]: https://material.wq.io/@wq/react
+[@wq/material]: https://material.wq.io/
+[@wq/map-gl]: https://map-gl.wq.io/
+[@wq/form]: https://form.wq.io/

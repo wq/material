@@ -28,13 +28,13 @@
     },
     "homepage": "https://material.wq.io/@wq/material-native",
     "dependencies": {
-        "@wq/react": "file:../react"
+        "@wq/react": "^3.0.0-alpha.0"
     },
     "peerDependencies": {
         "react-native-paper": "*"
     },
     "devDependencies": {
-        "jest-expo": "^52.0.3",
-        "react-native-paper": "^5.13.1"
+        "jest-expo": "^52.0.6",
+        "react-native-paper": "^5.14.5"
     }
 }
