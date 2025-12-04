@@ -27,5 +27,7 @@
         "url": "https://github.com/wq/material/issues"
     },
     "homepage": "https://material.wq.io/@wq/gatsby-components",
-    "devDependencies": {}
+    "dependencies": {
+        "@wq/material-web": "^3.0.0-alpha.0"
+    }
 }
