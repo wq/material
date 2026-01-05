@@ -43,11 +43,12 @@ jobs:
               run: |
                   cd packages/$PACKAGE
                   npm run test
-            - uses: smartsquaregmbh/delete-old-packages@v0.8.1
+            - uses: actions/delete-package-versions@v5
               if: github.event_name == 'push' && github.ref == 'refs/heads/main'
               with:
-                  keep: 5
-                  names: ${{ matrix.package }}
+                  package-type: npm
+                  package-name: ${{ matrix.package }}
+                  min-versions-to-keep: 5
             - name: Publish to Github Packages
               if: github.event_name == 'push' && github.ref == 'refs/heads/main'
               run: |
@@ -57,4 +58,4 @@ jobs:
                   echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> .npmrc
                   cp .npmrc packages/$PACKAGE/.npmrc  # for native builds
                   cd packages/$PACKAGE
-                  npm publish
+                  npm publish --tag latest

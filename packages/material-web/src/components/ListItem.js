@@ -48,6 +48,7 @@ ListItem.propTypes = {
     description: PropTypes.node,
     icon: PropTypes.string,
     button: PropTypes.bool,
+    secondaryAction: PropTypes.node,
 };
 
 export default withWQ(ListItem);

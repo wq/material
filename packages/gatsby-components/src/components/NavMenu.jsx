@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
 import {
     ScrollView,
     List,
@@ -18,7 +18,7 @@ export default function NavMenu() {
                         {name && <ListSubheader>{name}</ListSubheader>}
                         {pages.map((page) =>
                             page.pages ? (
-                                <Folder {...page} />
+                                <Folder key={page.url} {...page} />
                             ) : (
                                 <ListItemLink
                                     key={page.url}
