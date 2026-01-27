@@ -55,6 +55,11 @@ import Grid from "./Grid.js";
 import Menu from "./Menu.js";
 import MenuItem from "./MenuItem.js";
 
+import Alert from "./Alert.js";
+import CircularProgress from "./CircularProgress.js";
+import LinearProgress from "./LinearProgress.js";
+import Skeleton from "./Skeleton.js";
+
 export {
     Container,
     Header,
@@ -113,3 +118,5 @@ export {
 export { Popup, SidePanel, Breadcrumbs, Pagination };
 
 export { Badge, Grid, Menu, MenuItem };
+
+export { Alert, CircularProgress, LinearProgress, Skeleton };
