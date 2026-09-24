@@ -1,9 +1,6 @@
-import React from "react";
-import {
-    Accordion as MuiAccordion,
-    AccordionSummary,
-    AccordionDetails,
-} from "@mui/material";
+import MuiAccordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
 import { useIcon, withWQ } from "@wq/react";
 import PropTypes from "prop-types";
 

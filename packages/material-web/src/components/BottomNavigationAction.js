@@ -1,5 +1,4 @@
-import React from "react";
-import { BottomNavigationAction as MuiBottomNavigationAction } from "@mui/material";
+import MuiBottomNavigationAction from "@mui/material/BottomNavigationAction";
 import PropTypes from "prop-types";
 import { useComponents, useIcon, withWQ } from "@wq/react";
 import { NavLink } from "./Link.js";

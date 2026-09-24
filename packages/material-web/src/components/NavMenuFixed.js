@@ -1,7 +1,6 @@
-import React from "react";
+import Paper from "@mui/material/Paper";
 import { createFallbackComponent, useComponents, withWQ } from "@wq/react";
 import { useMinWidth } from "../hooks.js";
-import { Paper } from "@mui/material";
 
 export const NavMenu = createFallbackComponent("NavMenu", "@wq/router");
 

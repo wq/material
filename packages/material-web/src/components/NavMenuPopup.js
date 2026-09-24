@@ -1,5 +1,7 @@
-import React from "react";
-import { Drawer, AppBar, Toolbar, Typography } from "@mui/material";
+import Drawer from "@mui/material/Drawer";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
 import { useComponents, useConfig, withWQ } from "@wq/react";
 import { NavMenu } from "./NavMenuFixed.js";
 import Logo from "./Logo.js";

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
+import Collapse from "@mui/material/Collapse";
 import { useComponents, withWQ } from "@wq/react";
-import { Collapse } from "@mui/material";
 import ListItem from "./ListItem.js";
 import IconButton from "./IconButton.js";
 import PropTypes from "prop-types";
@@ -13,8 +13,9 @@ const ExpandableListItemFallback = {
 };
 
 function ExpandableListItem({ children, open, onToggle, ...rest }) {
+    // eslint-disable-next-line @eslint-react/no-children-to-array
     const [summary, ...details] = React.Children.toArray(children),
-        [internalOpen, setOpen] = useState(false),
+        [internalOpen, setInternalOpen] = useState(false),
         { ListItem, IconButton } = useComponents();
 
     let toggleOpen;
@@ -22,7 +23,7 @@ function ExpandableListItem({ children, open, onToggle, ...rest }) {
         toggleOpen = () => onToggle(!open);
     } else {
         open = internalOpen;
-        toggleOpen = () => setOpen(!open);
+        toggleOpen = () => setInternalOpen(!internalOpen);
     }
 
     return (

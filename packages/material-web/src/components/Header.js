@@ -1,5 +1,7 @@
-import React, { useState } from "react";
-import { AppBar, Toolbar, Typography } from "@mui/material";
+import { useState } from "react";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
 import { useComponents, withWQ } from "@wq/react";
 import { useMinWidth } from "../hooks.js";
 import Logo from "./Logo.js";
@@ -17,6 +19,7 @@ const HeaderFallback = {
         IconButton,
         NavMenuPopup,
         useSiteTitle,
+        // eslint-disable-next-line @eslint-react/no-unnecessary-use-prefix
         useBreadcrumbs() {
             console.warn("Override useBreadcrumbs() to provide links");
             return [];

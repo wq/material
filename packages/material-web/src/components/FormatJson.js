@@ -1,4 +1,3 @@
-import React from "react";
 import { withWQ } from "@wq/react";
 import PropTypes from "prop-types";
 

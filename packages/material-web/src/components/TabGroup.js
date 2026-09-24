@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Tabs } from "@mui/material";
+import Tabs from "@mui/material/Tabs";
 import { withWQ } from "@wq/react";
 
 function TabGroup(props) {
@@ -13,6 +13,7 @@ function TabGroup(props) {
 export default withWQ(TabGroup);
 
 function UncontrolledTabGroup({ children, ...rest }) {
+    // eslint-disable-next-line @eslint-react/no-children-to-array
     const tabs = React.Children.toArray(children),
         [value, setValue] = useState(tabs[0].props.value);
     return (
@@ -23,6 +24,7 @@ function UncontrolledTabGroup({ children, ...rest }) {
 }
 
 function ControlledTabGroup({ children, value, setValue, ...rest }) {
+    // eslint-disable-next-line @eslint-react/no-children-to-array
     const tabs = React.Children.toArray(children),
         activeTab = tabs.find((tab) => tab.props.value === value),
         handleChange = (evt, tab) => setValue(tab);

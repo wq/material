@@ -1,5 +1,5 @@
 import React from "react";
-import { Tab as MuiTab } from "@mui/material";
+import MuiTab from "@mui/material/Tab";
 import { useComponents, useIcon, withWQ } from "@wq/react";
 import { NavLink } from "./Link.js";
 import PropTypes from "prop-types";
@@ -10,7 +10,7 @@ const TabItemFallback = {
     },
 };
 
-export default function TabItem({ icon, to, children, ...rest }) {
+function TabItem({ icon, to, children, ...rest }) {
     /* eslint no-unused-vars: off */
     const Icon = useIcon(icon),
         { NavLink } = useComponents();
@@ -31,4 +31,4 @@ TabItem.propTypes = {
     children: PropTypes.node,
 };
 
-export const Tab = withWQ(TabItem, { fallback: TabItemFallback });
+export default withWQ(TabItem, { fallback: TabItemFallback });

@@ -1,5 +1,4 @@
-import React from "react";
-import { List as MuiList } from "@mui/material";
+import MuiList from "@mui/material/List";
 import { withWQ } from "@wq/react";
 
 function List(props) {

@@ -1,4 +1,3 @@
-import React from "react";
 import { useConfig, useComponents, withWQ } from "@wq/react";
 import Img from "./Img.js";
 

@@ -1,10 +1,7 @@
-import React from "react";
-import {
-    ListItem as MuiListItem,
-    ListItemButton as MuiListItemButton,
-    ListItemText,
-    ListItemIcon,
-} from "@mui/material";
+import MuiListItem from "@mui/material/ListItem";
+import MuiListItemButton from "@mui/material/ListItemButton";
+import ListItemText from "@mui/material/ListItemText";
+import ListItemIcon from "@mui/material/ListItemIcon";
 import PropTypes from "prop-types";
 import { useIcon, withWQ } from "@wq/react";
 

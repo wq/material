@@ -1,5 +1,4 @@
-import React from "react";
-import { Drawer } from "@mui/material";
+import Drawer from "@mui/material/Drawer";
 import { withWQ } from "@wq/react";
 import PropTypes from "prop-types";
 

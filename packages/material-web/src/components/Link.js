@@ -1,5 +1,4 @@
-import React from "react";
-import { Link as MuiLink } from "@mui/material";
+import MuiLink from "@mui/material/Link";
 import { useComponents, withWQ, createFallbackComponent } from "@wq/react";
 
 export const NavLink = createFallbackComponent("NavLink", "@wq/router"),

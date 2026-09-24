@@ -1,4 +1,3 @@
-import React from "react";
 import { useComponents, useIcon, withWQ } from "@wq/react";
 import ButtonLink from "./ButtonLink.js";
 import PropTypes from "prop-types";

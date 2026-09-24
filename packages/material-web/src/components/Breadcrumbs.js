@@ -1,5 +1,5 @@
-import React from "react";
-import { Paper, Breadcrumbs as MuiBreadcrumbs } from "@mui/material";
+import Paper from "@mui/material/Paper";
+import MuiBreadcrumbs from "@mui/material/Breadcrumbs";
 import ButtonLink from "./ButtonLink.js";
 import HomeLink from "./HomeLink.js";
 import { useComponents, useIcon, withWQ } from "@wq/react";
@@ -49,9 +49,9 @@ function Breadcrumbs({ links }) {
                     label={links[0].label}
                     active={links[0].active}
                 />
-                {links.slice(1).map(({ url, label, active }, i) => (
+                {links.slice(1).map(({ url, label, active }) => (
                     <ButtonLink
-                        key={i}
+                        key={url}
                         to={url}
                         color={active ? "inherit" : "primary"}
                     >

@@ -1,6 +1,5 @@
-import React from "react";
+import MuiIconButton from "@mui/material/IconButton";
 import { useIcon, withWQ } from "@wq/react";
-import { IconButton as MuiIconButton } from "@mui/material";
 import { Cancel } from "../icons.js";
 import PropTypes from "prop-types";
 

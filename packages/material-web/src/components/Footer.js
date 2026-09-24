@@ -1,4 +1,3 @@
-import React from "react";
 import { useComponents, withWQ } from "@wq/react";
 import Typography from "./Typography.js";
 import FooterContent from "./FooterContent.js";

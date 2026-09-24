@@ -1,5 +1,4 @@
-import React from "react";
-import { Fab as MuiFab } from "@mui/material";
+import MuiFab from "@mui/material/Fab";
 import { useComponents, useIcon, withWQ } from "@wq/react";
 import { NavLink } from "./Link.js";
 import PropTypes from "prop-types";

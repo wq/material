@@ -1,5 +1,4 @@
-import React from "react";
-import { Chip as MuiChip } from "@mui/material";
+import MuiChip from "@mui/material/Chip";
 import { useIcon, withWQ } from "@wq/react";
 import PropTypes from "prop-types";
 

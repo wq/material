@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import Drawer from "@mui/material/Drawer";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import { useComponents, withWQ } from "@wq/react";
-import { Drawer, useMediaQuery } from "@mui/material";
 import IconButton from "./IconButton.js";
 import PropTypes from "prop-types";
 
