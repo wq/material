@@ -12,6 +12,8 @@ const allPageQuery = graphql`
                         section
                         icon
                         order
+                        folderTitle
+                        folderIcon
                     }
                     tableOfContents
                 }
@@ -38,7 +40,9 @@ export function usePages() {
                     mdx.frontmatter.title ||
                     mdx.tableOfContents?.items?.[0]?.title ||
                     node.name,
+                folderTitle: mdx.frontmatter.folderTitle,
                 icon: mdx.frontmatter.icon,
+                folderIcon: mdx.frontmatter.folderIcon,
                 url: getUrl(node),
                 order: mdx.frontmatter.order || 0,
                 section: mdx.frontmatter.section || "",
@@ -56,7 +60,12 @@ export function usePages() {
                 if (a.order !== b.order) {
                     return a.order - b.order;
                 }
-                return a.title.localeCompare(b.title);
+                if (a.folder && b.folder) {
+                    return a.folder.localeCompare(b.folder);
+                }
+                return (a.folderTitle || a.title).localeCompare(
+                    b.folderTitle || b.title,
+                );
             });
 
         for (const page of pages) {
@@ -71,8 +80,8 @@ export function usePages() {
                 );
                 if (!folder) {
                     folder = {
-                        title: page.title,
-                        icon: page.icon,
+                        title: page.folderTitle || page.title,
+                        icon: page.folderIcon || page.icon,
                         url: page.url,
                         pages: [],
                     };
@@ -87,16 +96,19 @@ export function usePages() {
     }, [nodes]);
 }
 
+// eslint-disable-next-line @eslint-react/no-unnecessary-use-prefix
 export function useNav() {
     // FIXME
     return () => null;
 }
 
+// eslint-disable-next-line @eslint-react/no-unnecessary-use-prefix
 export function useReverse() {
     // FIXME
     return () => null;
 }
 
+// eslint-disable-next-line @eslint-react/no-unnecessary-use-prefix
 export function useRouteInfo() {
     // FIXME
     return () => null;

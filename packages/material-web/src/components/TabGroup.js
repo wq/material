@@ -1,6 +1,40 @@
 import React, { useState } from "react";
 import Tabs from "@mui/material/Tabs";
-import { withWQ } from "@wq/react";
+import Box from "@mui/material/Box";
+import { withWQ, useComponents } from "@wq/react";
+
+const TabGroupFallback = {
+    components: {
+        TabContainer(props) {
+            return (
+                <Box
+                    {...props}
+                    sx={{
+                        flex: 1,
+                        display: "flex",
+                        flexDirection: "column",
+                        overflow: "hidden",
+                        ...props.sx,
+                    }}
+                />
+            );
+        },
+        TabContent(props) {
+            return (
+                <Box
+                    {...props}
+                    sx={{
+                        flex: 1,
+                        display: "flex",
+                        flexDirection: "column",
+                        overflow: "hidden",
+                        ...props.sx,
+                    }}
+                />
+            );
+        },
+    },
+};
 
 function TabGroup(props) {
     if (props.value || props.setValue) {
@@ -10,7 +44,7 @@ function TabGroup(props) {
     }
 }
 
-export default withWQ(TabGroup);
+export default withWQ(TabGroup, { fallback: TabGroupFallback });
 
 function UncontrolledTabGroup({ children, ...rest }) {
     // eslint-disable-next-line @eslint-react/no-children-to-array
@@ -27,17 +61,11 @@ function ControlledTabGroup({ children, value, setValue, ...rest }) {
     // eslint-disable-next-line @eslint-react/no-children-to-array
     const tabs = React.Children.toArray(children),
         activeTab = tabs.find((tab) => tab.props.value === value),
-        handleChange = (evt, tab) => setValue(tab);
+        handleChange = (evt, tab) => setValue(tab),
+        { TabContainer, TabContent } = useComponents();
 
     return (
-        <div
-            style={{
-                flex: 1,
-                display: "flex",
-                flexDirection: "column",
-                overflow: "hidden",
-            }}
-        >
+        <TabContainer>
             <Tabs
                 value={value}
                 onChange={handleChange}
@@ -46,16 +74,7 @@ function ControlledTabGroup({ children, value, setValue, ...rest }) {
             >
                 {tabs}
             </Tabs>
-            <div
-                style={{
-                    flex: 1,
-                    display: "flex",
-                    flexDirection: "column",
-                    overflow: "hidden",
-                }}
-            >
-                {activeTab && activeTab.props.children}
-            </div>
-        </div>
+            <TabContent>{activeTab && activeTab.props.children}</TabContent>
+        </TabContainer>
     );
 }

@@ -1,4 +1,3 @@
-import React from "react";
 import { ScrollView, View, List } from "@wq/material-web";
 export default function Content({ children }) {
     return (
