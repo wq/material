@@ -29,4 +29,10 @@ export default defineConfig([
             "@eslint-react/static-components": "off",
         },
     },
+    {
+        files: ["docs/*.js", "docs/src/**/*.jsx"],
+        rules: {
+            "no-unused-vars": ["error", { varsIgnorePattern: "^React$" }],
+        },
+    },
 ]);

@@ -31,7 +31,7 @@ jobs:
               with:
                   python-version: ${{ matrix.python-version }}
             - name: Install dependencies
-              run: npm ci && npm run build
+              run: npm ci && npm run build --workspace @wq/react --workspace @wq/material-web
             - name: Install native dependencies
               if: matrix.package == 'material-native' || matrix.package == 'map-gl-native'
               run: cd packages/$PACKAGE && npm ci
