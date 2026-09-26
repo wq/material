@@ -17,12 +17,25 @@ import {
     useBreadcrumbs,
 } from "@wq/gatsby-components";
 import { Link } from "gatsby";
-import { Info, Javascript as NpmPackage } from "@mui/icons-material";
+
+import Info from "@mui/icons-material/Info";
+import NpmPackage from "@mui/icons-material/Javascript";
+import Code from "@mui/icons-material/Code";
+
+import Index from "@mui/icons-material/List";
+import Display from "@mui/icons-material/Label";
+import LayoutIcon from "@mui/icons-material/ViewComfy";
+import ContentIcon from "@mui/icons-material/Article";
+import Button from "@mui/icons-material/CheckCircle";
+import List from "@mui/icons-material/ListAlt";
+import Table from "@mui/icons-material/GridOn";
+import Modal from "@mui/icons-material/MenuOpen";
+
 import "./styles.css";
 
 const config = {
     site_title: "@wq/material",
-    logo: "https://wq.io/images/icons/wq.svg",
+    logo: "/images/icons/wq.svg",
 };
 
 const components = {
@@ -37,6 +50,15 @@ const components = {
 const icons = {
     Info,
     NpmPackage,
+    Code,
+    Index,
+    Display,
+    Layout: LayoutIcon,
+    Content: ContentIcon,
+    Button,
+    List,
+    Table,
+    Modal,
 };
 
 const overrides = { config, components, icons };
