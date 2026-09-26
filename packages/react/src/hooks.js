@@ -1,5 +1,5 @@
-import React, { useMemo, useContext } from "react";
-import { paramCase } from "change-case";
+import React, { useMemo, use } from "react";
+import { kebabCase } from "change-case";
 
 export const WQContext = React.createContext({
     fallback: {
@@ -61,7 +61,7 @@ export function mergeWQContexts(context1, context2) {
 }
 
 export function useWQContext() {
-    return useContext(WQContext);
+    return use(WQContext);
 }
 
 export function useWQ(name, withParamCase = false) {
@@ -74,7 +74,7 @@ export function useWQ(name, withParamCase = false) {
         };
         if (withParamCase) {
             Object.keys(result).forEach((key) => {
-                result[paramCase(key)] = result[key];
+                result[kebabCase(key)] = result[key];
             });
         }
         return result;
@@ -120,7 +120,7 @@ export function WQ({ wq: overrides, defaults, fallback, children }) {
             () => mergeWQContexts(curValue, { overrides, defaults, fallback }),
             [curValue, overrides, defaults, fallback],
         );
-    return <WQContext.Provider value={value}>{children}</WQContext.Provider>;
+    return <WQContext value={value}>{children}</WQContext>;
 }
 
 export function withWQ(Component, optionsOrName) {

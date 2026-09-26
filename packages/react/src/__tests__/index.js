@@ -1,4 +1,4 @@
-import React from "react";
+import { jest } from "@jest/globals";
 import { render } from "@testing-library/react";
 import {
     useComponents,
@@ -35,14 +35,16 @@ test("wq fallback", () => {
     console.warn.mockClear();
 });
 
+function CustomView({ children }) {
+    return <div className="test">{children}</div>;
+}
+
 test("wq override", () => {
     const { getByText } = render(
         <TestComponentWithWQ
             wq={{
                 components: {
-                    View({ children }) {
-                        return <div className="test">{children}</div>;
-                    },
+                    View: CustomView,
                 },
             }}
         >
