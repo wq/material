@@ -1,4 +1,3 @@
-import React from "react";
 import { useComponents, withWQ, createFallbackComponent } from "@wq/react";
 import { Button } from "react-native";
 import PropTypes from "prop-types";

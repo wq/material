@@ -1,4 +1,3 @@
-import React from "react";
 import { Modal, Portal } from "react-native-paper";
 import PropTypes from "prop-types";
 import { withWQ } from "@wq/react";

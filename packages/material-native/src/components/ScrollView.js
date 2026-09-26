@@ -1,4 +1,3 @@
-import React from "react";
 import { ScrollView as PaperScrollView } from "react-native";
 import { useTheme } from "react-native-paper";
 import PropTypes from "prop-types";

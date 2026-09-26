@@ -1,4 +1,3 @@
-import React from "react";
 import { FAB } from "react-native-paper";
 import { useComponents, useIcon, withWQ } from "@wq/react";
 import { useNav } from "./Link.js";

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useComponents, withWQ } from "@wq/react";
 import { View } from "react-native";
 import { useTheme } from "react-native-paper";

@@ -1,4 +1,4 @@
-import * as material from "@wq/material/src/index.native.js";
+import * as material from "@wq/material";
 
 test("it loads", () => {
     for (const key in material) {

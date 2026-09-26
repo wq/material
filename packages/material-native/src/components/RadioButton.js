@@ -1,4 +1,3 @@
-import React from "react";
 import { RadioButton as PaperRadioButton, useTheme } from "react-native-paper";
 import PropTypes from "prop-types";
 import { withWQ } from "@wq/react";
@@ -18,7 +17,7 @@ function RadioButton({ checked, color, ...rest }) {
     } else if (color === "secondary") {
         color = theme.colors.accent;
     }
-    return <PaperRadioButton status={status} {...rest} />;
+    return <PaperRadioButton status={status} color={color} {...rest} />;
 }
 
 RadioButton.propTypes = {

@@ -1,4 +1,3 @@
-import React from "react";
 import { Appbar } from "react-native-paper";
 import { useComponents, withWQ, createFallbackComponent } from "@wq/react";
 import { useNav } from "./Link.js";

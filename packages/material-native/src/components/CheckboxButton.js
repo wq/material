@@ -1,4 +1,3 @@
-import React from "react";
 import { Checkbox, useTheme } from "react-native-paper";
 import PropTypes from "prop-types";
 import { withWQ } from "@wq/react";
@@ -18,7 +17,7 @@ function CheckboxButton({ checked, color, ...props }) {
     } else if (color === "secondary") {
         color = theme.colors.accent;
     }
-    return <Checkbox status={status} {...props} />;
+    return <Checkbox status={status} color={color} {...props} />;
 }
 
 CheckboxButton.propTypes = {

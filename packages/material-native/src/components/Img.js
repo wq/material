@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Image, TouchableOpacity, Dimensions } from "react-native";
 import PropTypes from "prop-types";
 import { withWQ } from "@wq/react";
@@ -10,6 +10,7 @@ function Img({ src, onPress, onClick, style, ...props }) {
             return;
         }
         if (typeof src !== "string") {
+            // eslint-disable-next-line @eslint-react/set-state-in-effect
             setSource(src);
             return;
         }

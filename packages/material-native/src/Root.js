@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import { withWQ } from "@wq/react";
 import {
     MD2LightTheme,

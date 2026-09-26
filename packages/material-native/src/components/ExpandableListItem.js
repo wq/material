@@ -12,15 +12,16 @@ function ExpandableListItem({
     ...rest
 }) {
     const Icon = useIcon(icon),
+        // eslint-disable-next-line @eslint-react/no-children-to-array
         [summary, ...details] = React.Children.toArray(children),
-        [internalOpen, setOpen] = useState(false);
+        [internalOpen, setInternalOpen] = useState(false);
 
     let toggleOpen;
     if (open === false || open || onToggle) {
         toggleOpen = () => onToggle(!open);
     } else {
         open = internalOpen;
-        toggleOpen = () => setOpen(!open);
+        toggleOpen = () => setInternalOpen(!open);
     }
 
     return (

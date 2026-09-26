@@ -1,4 +1,3 @@
-import React from "react";
 import { Switch as PaperSwitch, useTheme } from "react-native-paper";
 import PropTypes from "prop-types";
 import { withWQ } from "@wq/react";
@@ -10,7 +9,7 @@ function Switch({ checked: value, color, ...rest }) {
     } else if (color === "secondary") {
         color = theme.colors.accent;
     }
-    return <PaperSwitch value={value} {...rest} />;
+    return <PaperSwitch value={value} color={color} {...rest} />;
 }
 
 Switch.propTypes = {

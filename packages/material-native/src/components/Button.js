@@ -1,4 +1,3 @@
-import React from "react";
 import { useIcon, withWQ } from "@wq/react";
 import { Button as PaperButton, useTheme } from "react-native-paper";
 import PropTypes from "prop-types";

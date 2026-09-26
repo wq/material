@@ -1,6 +1,6 @@
 {
     "name": "@wq/material-native",
-    "version": "3.0.0-alpha.1",
+    "version": "3.0.0-alpha.2",
     "description": "React Native and Expo bindings for @wq/material",
     "type": "module",
     "main": "src/index.js",
@@ -28,13 +28,16 @@
     },
     "homepage": "https://material.wq.io/@wq/material-native",
     "dependencies": {
-        "@wq/react": "^3.0.0-alpha.0"
+        "@wq/react": "^3.0.0-beta.1"
     },
     "peerDependencies": {
         "react-native-paper": "*"
     },
     "devDependencies": {
-        "jest-expo": "^52.0.6",
-        "react-native-paper": "^5.14.5"
+        "@react-native/assets-registry": "^0.87.1",
+        "babel-preset-expo": "^57.0.13",
+        "expo": "^57.0.25",
+        "jest-expo": "^57.0.5",
+        "react-native-paper": "^5.15.3"
     }
 }

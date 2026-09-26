@@ -1,4 +1,3 @@
-import React from "react";
 import { useComponents, withWQ } from "@wq/react";
 import { useNav } from "./Link.js";
 import ListItem from "./ListItem.js";

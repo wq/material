@@ -5,6 +5,7 @@ import { SegmentedButtons } from "react-native-paper";
 import PropTypes from "prop-types";
 
 function TabGroup({ children, style, ...rest }) {
+    // eslint-disable-next-line @eslint-react/no-children-to-array
     const tabs = React.Children.toArray(children),
         [value, setValue] = useState(tabs[0].props.value),
         activeTab = tabs.find((tab) => tab.props.value === value),

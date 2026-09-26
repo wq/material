@@ -1,4 +1,3 @@
-import React from "react";
 import { Text, ScrollView } from "react-native";
 import PropTypes from "prop-types";
 import { withWQ } from "@wq/react";
