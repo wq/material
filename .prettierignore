@@ -6,3 +6,5 @@
 packages/outbox/vendor/json-forms.js
 tests/
 js/
+docs/.cache/
+docs/public/

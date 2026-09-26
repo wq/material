@@ -1,6 +1,6 @@
-import js from "@eslint/js";
+import eslintJs from "@eslint/js";
 import globals from "globals";
-import pluginReact from "eslint-plugin-react";
+import eslintReact from "@eslint-react/eslint-plugin";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig([
@@ -9,23 +9,24 @@ export default defineConfig([
     },
     {
         files: ["**/*.{js,mjs,cjs,jsx}"],
-        plugins: { js },
-        extends: ["js/recommended"],
+        extends: [
+            eslintJs.configs.recommended,
+            eslintReact.configs.recommended,
+        ],
         languageOptions: {
             globals: {
                 ...globals.browser,
                 ...globals.jest,
                 ...globals.node,
             },
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true,
+                },
+            },
         },
         rules: {
-            "react/prop-types": [
-                2,
-                {
-                    skipUndeclared: true,
-                },
-            ],
+            "@eslint-react/static-components": "off",
         },
     },
-    pluginReact.configs.flat.recommended,
 ]);
