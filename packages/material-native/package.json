@@ -27,10 +27,8 @@
         "url": "https://github.com/wq/material/issues"
     },
     "homepage": "https://material.wq.io/@wq/material-native",
-    "dependencies": {
-        "@wq/react": "^3.0.0-beta.1"
-    },
     "peerDependencies": {
+        "@wq/react": "^3.0.0-beta.1",
         "react-native-paper": "*"
     },
     "devDependencies": {

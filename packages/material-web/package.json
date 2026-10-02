@@ -28,14 +28,12 @@
         "url": "https://github.com/wq/material/issues"
     },
     "homepage": "https://material.wq.io/@wq/material-web",
-    "dependencies": {
-        "@wq/react": "^3.0.0-beta.1"
-    },
     "peerDependencies": {
         "@emotion/react": "*",
         "@emotion/styled": "*",
         "@mui/icons-material": "*",
         "@mui/material": "*",
+        "@wq/react": "^3.0.0-beta.1",
         "react": "*",
         "react-dom": "*"
     },
