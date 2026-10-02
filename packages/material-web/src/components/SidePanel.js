@@ -54,13 +54,15 @@ function SidePanel({
             variant="permanent"
             style={drawerStyle}
             anchor={anchor}
-            PaperProps={{
-                style: {
-                    width: open ? 280 : 50,
-                    borderBottom:
-                        mobile && !open && "1px solid rgba(0, 0, 0, 0.12)",
-                    position: "relative",
-                    zIndex: 300,
+            slotProps={{
+                paper: {
+                    style: {
+                        width: open ? 280 : 50,
+                        borderBottom:
+                            mobile && !open && "1px solid rgba(0, 0, 0, 0.12)",
+                        position: "relative",
+                        zIndex: 300,
+                    },
                 },
             }}
         >

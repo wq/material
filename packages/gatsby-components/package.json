@@ -1,6 +1,6 @@
 {
     "name": "@wq/gatsby-components",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "description": "Web bindings for @wq/material",
     "type": "module",
     "main": "index.js",
@@ -29,7 +29,7 @@
     "homepage": "https://material.wq.io/@wq/gatsby-components",
     "dependencies": {
         "@stackblitz/sdk": "^1.11.1",
-        "@wq/material-web": "^3.0.0-alpha.2",
+        "@wq/material-web": "^3.0.0-alpha.4",
         "react-syntax-highlighter": "^16.1.1"
     }
 }

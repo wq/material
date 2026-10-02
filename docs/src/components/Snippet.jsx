@@ -1,4 +1,3 @@
-import React from "react";
 import { Snippet as BaseSnippet } from "@wq/gatsby-components";
 
 const expo = {

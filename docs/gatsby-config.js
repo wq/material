@@ -6,6 +6,7 @@ module.exports = {
         title: `@wq/material`,
         siteUrl: `https://material.wq.io`,
     },
+    jsxRuntime: "automatic",
     plugins: [
         "gatsby-plugin-emotion",
         "gatsby-plugin-mdx",

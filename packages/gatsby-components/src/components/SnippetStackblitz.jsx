@@ -7,6 +7,7 @@ export default function SnippetStackblitz({
     dependencies,
     name,
     description,
+    files: customFiles,
     height = 400,
 }) {
     const ref = useRef(null);
@@ -28,6 +29,7 @@ export default function SnippetStackblitz({
                     ...files,
                     "src/App.jsx": code,
                     "package.json": createPackageJson(name, dependencies),
+                    ...(customFiles || {}),
                 },
                 title: name,
                 description: description,
@@ -45,7 +47,7 @@ export default function SnippetStackblitz({
                 wrapper.innerHTML = "";
             }
         };
-    }, [code, dependencies, name, description, height]);
+    }, [code, dependencies, customFiles, name, description, height]);
 
     return (
         <View
@@ -102,7 +104,7 @@ function createPackageJson(name, dependencies) {
                 preview: "vite preview",
             },
             dependencies: {
-                ...dependencies,
+                ...(dependencies || {}),
                 react: "^19.3.0",
                 "react-dom": "^19.3.0",
             },

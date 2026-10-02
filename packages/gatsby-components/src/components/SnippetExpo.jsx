@@ -17,15 +17,17 @@ export default function ExpoSnack({
         if (description) {
             url += "&description=" + encodeURIComponent(description);
         }
-        url +=
-            "&dependencies=" +
-            encodeURIComponent(
-                Object.entries(dependencies)
-                    .map(([dep, version]) =>
-                        version === "*" ? dep : `${dep}@${version}`,
-                    )
-                    .join(","),
-            );
+        if (dependencies && Object.keys(dependencies).length > 0) {
+            url +=
+                "&dependencies=" +
+                encodeURIComponent(
+                    Object.entries(dependencies)
+                        .map(([dep, version]) =>
+                            version === "*" ? dep : `${dep}@${version}`,
+                        )
+                        .join(","),
+                );
+        }
         return url;
     }, [code, dependencies, name, description]);
     return (

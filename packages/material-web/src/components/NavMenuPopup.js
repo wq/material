@@ -30,7 +30,7 @@ function NavMenuPopup({ open, onClose }) {
             onClose={onClose}
             anchor="left"
             keepMounted
-            PaperProps={{ style: { maxWidth: "80%", width: 500 } }}
+            slotProps={{ paper: { style: { maxWidth: "80%", width: 500 } } }}
         >
             <AppBar
                 position="static"

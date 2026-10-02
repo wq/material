@@ -74,7 +74,7 @@ function Snippet({
                 >
                     <SnippetExpo
                         code={expo.code || code}
-                        dependencies={expo.dependencies || {}}
+                        dependencies={expo.dependencies}
                         name={expo.name || name}
                         description={expo.description || description}
                         height={height}
@@ -92,7 +92,8 @@ function Snippet({
                         name={stackblitz.name || name}
                         description={stackblitz.description || description}
                         code={stackblitz.code || code}
-                        dependencies={stackblitz.dependencies || {}}
+                        dependencies={stackblitz.dependencies}
+                        files={stackblitz.files}
                         height={height}
                     />
                 </SnippetTab>
