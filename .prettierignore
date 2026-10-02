@@ -1,10 +1,2 @@
-*.md
-*.css
-*.scss
-*.html
-*.yml
-packages/outbox/vendor/json-forms.js
-tests/
-js/
-docs/.cache/
 docs/public/
+docs/.cache/
