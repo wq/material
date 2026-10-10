@@ -61,7 +61,6 @@ export function mergeWQContexts(context1, context2) {
 }
 
 export function useWQContext() {
-    // eslint-disable-next-line @eslint-react/no-use-context
     return useContext(WQContext);
 }
 
@@ -121,7 +120,6 @@ export function WQ({ wq: overrides, defaults, fallback, children }) {
             () => mergeWQContexts(curValue, { overrides, defaults, fallback }),
             [curValue, overrides, defaults, fallback],
         );
-    // eslint-disable-next-line @eslint-react/no-context-provider
     return <WQContext.Provider value={value}>{children}</WQContext.Provider>;
 }
 

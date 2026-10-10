@@ -27,6 +27,9 @@ export default defineConfig([
         },
         rules: {
             "@eslint-react/static-components": "off",
+            // TODO: Restore when we drop support for React <= 18
+            "@eslint-react/no-context-provider": "off",
+            "@eslint-react/no-use-context": "off",
         },
     },
 ]);
