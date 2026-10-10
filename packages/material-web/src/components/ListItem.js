@@ -5,10 +5,25 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import PropTypes from "prop-types";
 import { useIcon, withWQ } from "@wq/react";
 
-function ListItemButton({ children, ...rest }) {
+function ListItemButton({
+    children,
+    secondaryAction,
+    style,
+    sx,
+    className,
+    divider,
+    ...rest
+}) {
     return (
-        <MuiListItem disablePadding {...rest}>
-            <MuiListItemButton>{children}</MuiListItemButton>
+        <MuiListItem
+            disablePadding
+            secondaryAction={secondaryAction}
+            style={style}
+            sx={sx}
+            className={className}
+            divider={divider}
+        >
+            <MuiListItemButton {...rest}>{children}</MuiListItemButton>
         </MuiListItem>
     );
 }
