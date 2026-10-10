@@ -1,6 +1,6 @@
 {
     "name": "@wq/material-native",
-    "version": "3.0.0-alpha.2",
+    "version": "3.0.0-alpha.3",
     "description": "React Native and Expo bindings for @wq/material",
     "type": "module",
     "main": "src/index.js",
@@ -28,7 +28,7 @@
     },
     "homepage": "https://material.wq.io/@wq/material-native",
     "peerDependencies": {
-        "@wq/react": "^3.0.0-beta.1",
+        "@wq/react": "^3.0.0-beta.2",
         "react-native-paper": "*"
     },
     "devDependencies": {

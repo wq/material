@@ -1,4 +1,4 @@
-import React, { useMemo, use } from "react";
+import React, { useMemo, useContext } from "react";
 import { kebabCase } from "change-case";
 
 export const WQContext = React.createContext({
@@ -61,7 +61,8 @@ export function mergeWQContexts(context1, context2) {
 }
 
 export function useWQContext() {
-    return use(WQContext);
+    // eslint-disable-next-line @eslint-react/no-use-context
+    return useContext(WQContext);
 }
 
 export function useWQ(name, withParamCase = false) {
@@ -120,7 +121,8 @@ export function WQ({ wq: overrides, defaults, fallback, children }) {
             () => mergeWQContexts(curValue, { overrides, defaults, fallback }),
             [curValue, overrides, defaults, fallback],
         );
-    return <WQContext value={value}>{children}</WQContext>;
+    // eslint-disable-next-line @eslint-react/no-context-provider
+    return <WQContext.Provider value={value}>{children}</WQContext.Provider>;
 }
 
 export function withWQ(Component, optionsOrName) {

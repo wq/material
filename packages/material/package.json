@@ -1,6 +1,6 @@
 {
     "name": "@wq/material",
-    "version": "3.0.0-alpha.3",
+    "version": "3.0.0-alpha.4",
     "description": "React + Material UI renderer for use with @wq/app",
     "type": "module",
     "main": "src/index.js",
@@ -35,8 +35,8 @@
     },
     "homepage": "https://material.wq.io/@wq/material",
     "peerDependencies": {
-        "@wq/material-native": "^3.0.0-alpha.1",
-        "@wq/react": "^3.0.0-beta.1"
+        "@wq/material-native": "^3.0.0-alpha.3",
+        "@wq/react": "^3.0.0-beta.2"
     },
     "peerDependenciesMeta": {
         "@wq/material-native": {
@@ -44,6 +44,6 @@
         }
     },
     "devDependencies": {
-        "@wq/material-web": "^3.0.0-alpha.4"
+        "@wq/material-web": "^3.0.0-alpha.5"
     }
 }

@@ -1,6 +1,6 @@
 {
     "name": "@wq/react",
-    "version": "3.0.0-beta.1",
+    "version": "3.0.0-beta.2",
     "description": "React context and hooks for @wq projects",
     "type": "module",
     "main": "index.js",
@@ -29,5 +29,8 @@
     "homepage": "https://material.wq.io/@wq/react",
     "dependencies": {
         "change-case": "^5.4.4"
+    },
+    "peerDependencies": {
+        "react": "*"
     }
 }
