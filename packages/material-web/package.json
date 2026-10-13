@@ -1,6 +1,6 @@
 {
     "name": "@wq/material-web",
-    "version": "3.0.0-alpha.5",
+    "version": "3.0.0-alpha.6",
     "description": "Web bindings for @wq/material",
     "type": "module",
     "main": "index.js",

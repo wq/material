@@ -2,7 +2,7 @@ import Box from "@mui/material/Box";
 import { withWQ } from "@wq/react";
 import PropTypes from "prop-types";
 
-function ScrollView({ children, sx }) {
+function ScrollView({ children, sx, ...rest }) {
     return (
         <Box
             sx={{
@@ -11,6 +11,7 @@ function ScrollView({ children, sx }) {
                 flex: 1,
                 ...sx,
             }}
+            {...rest}
         >
             {children}
         </Box>
